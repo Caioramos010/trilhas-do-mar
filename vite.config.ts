@@ -4,6 +4,8 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // GitHub Pages serve em /trilhas-do-mar/; com domínio próprio, VITE_BASE=/
+  base: process.env.VITE_BASE || '/',
   plugins: [react()],
   resolve: {
     alias: {
