@@ -110,9 +110,9 @@ window.TDM = {
      Tamanhos recomendados em assets/img/LEIA-ME.md                          */
   fotos: {
     hero:       "assets/img/hero-lagoinha-costao.jpg",  // foto da cooperativa (a antiga do Wikimedia ficou em hero-lagoinha.jpg)
-    lagoinha:   "assets/img/lagoinha-aerea.jpg",        // vista aérea da Lagoinha do Leste
-    moleques:   "assets/img/moleques.jpg",    // vista aérea do arquipélago
-    tresirmas:  "assets/img/tres-irmas.jpg",  // as três ilhas vistas do alto
+    lagoinha:   "assets/img/lagoinha-aerea.jpg?v=2",        // vista aérea da Lagoinha do Leste
+    moleques:   "assets/img/moleques.jpg?v=2",    // vista aérea do arquipélago
+    tresirmas:  "assets/img/tres-irmas.jpg?v=2",  // as três ilhas vistas do alto
     barqueiro:  "assets/img/equipe.jpg"   // a equipe da cooperativa na praia
   }
 };
