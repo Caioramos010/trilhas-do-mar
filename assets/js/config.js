@@ -111,8 +111,8 @@ window.TDM = {
   fotos: {
     hero:       "assets/img/hero-lagoinha-costao.jpg",  // foto da cooperativa (a antiga do Wikimedia ficou em hero-lagoinha.jpg)
     lagoinha:   null,   // 1600x1200 · o carro-chefe
-    moleques:   null,   // 1200x900  · Ilhas Moleques do Sul
-    tresirmas:  null,   // 1200x900  · Ilha das Três Irmãs
+    moleques:   "assets/img/moleques.jpg",    // vista aérea do arquipélago
+    tresirmas:  "assets/img/tres-irmas.jpg",  // as três ilhas vistas do alto
     barqueiro:  "assets/img/equipe.jpg"   // a equipe da cooperativa na praia
   }
 };
