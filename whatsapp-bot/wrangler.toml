@@ -1,0 +1,19 @@
+name = "trilhas-do-mar-whatsapp"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+# Banco de estado do bot (quem está com a equipe, menu enviado, mensagens já vistas).
+# Troque o id pelo do namespace KV que você criar no painel (Storage & Databases → KV).
+[[kv_namespaces]]
+binding = "ESTADO"
+id = "COLE_AQUI_O_ID_DO_KV"
+
+[vars]
+GRAPH_VERSION = "v23.0"
+HANDOFF_HORAS = "8"
+
+# Segredos (NÃO coloque aqui; cadastre em Settings → Variables and Secrets):
+#   WHATSAPP_TOKEN   token permanente do usuário do sistema da Meta
+#   PHONE_NUMBER_ID  id do número no WhatsApp Manager
+#   APP_SECRET       chave secreta do app da Meta (valida as mensagens)
+#   VERIFY_TOKEN     uma senha qualquer que você inventa, usada na verificação do webhook
