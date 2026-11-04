@@ -1,0 +1,7 @@
+{
+  "name": "trilhas-do-mar",
+  "private": true,
+  "scripts": {
+    "build": "rm -rf dist && mkdir -p dist && cp -R index.html galeria.html assets dist/"
+  }
+}
