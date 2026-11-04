@@ -29,7 +29,7 @@ window.TDM = {
 
   /* ─── 3. REDES E PLATAFORMAS ─────────────────────────────────────────── */
   redes: {
-    instagram:    "https://instagram.com/",      // ⚠️ TROCAR pelo perfil real
+    instagram:    "https://www.instagram.com/trilhasdomaroficial/",
     airbnb:       "https://www.airbnb.com.br/",  // ⚠️ TROCAR pela página do serviço
     getyourguide: "https://www.getyourguide.com/" // ⚠️ TROCAR pela página da atividade
   },
