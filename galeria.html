@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Galeria · Trilhas do Mar</title>
+<meta name="description" content="Fotos e vídeos das travessias do Trilhas do Mar: Lagoinha do Leste, Ilha das Três Irmãs e Ilhas Moleques do Sul, no sul da Ilha de Florianópolis.">
+<meta name="theme-color" content="#04161B">
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/img/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-180.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Galeria · Trilhas do Mar">
+<meta property="og:description" content="O sul da Ilha visto de dentro do mar.">
+<meta property="og:image" content="assets/img/og-cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=23">
+</head>
+<body class="page-galeria">
+<a class="skip-link" href="#conteudo" data-i18n="aria.pular">Ir para o conteúdo</a>
+<div class="scroll-progress" aria-hidden="true"><i data-progress></i></div>
+
+<header class="site-header" data-header>
+  <div class="wrap header-in">
+    <a class="brand" href="index.html" data-i18n-attr="aria-label:aria.inicio" aria-label="Trilhas do Mar, ir para o início">
+      <img class="brand-mark" src="assets/img/logo-simbolo-branco.png" alt="" width="353" height="317" decoding="async">
+      <span class="brand-text">
+        <strong>Trilhas do Mar</strong>
+        <small data-i18n="marca.sub">Sul da Ilha · Florianópolis</small>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="index.html#passeios" data-i18n="nav.passeios">Passeios</a>
+      <a href="index.html#cooperativa" data-i18n="nav.coop">A cooperativa</a>
+      <a class="atual" href="galeria.html" aria-current="page" data-i18n="nav.galeria">Galeria</a>
+      <a href="index.html#duvidas" data-i18n="nav.duvidas">Dúvidas</a>
+    </nav>
+
+    <div class="lang" data-lang>
+      <button class="lang-btn" data-lang-btn aria-expanded="false" aria-haspopup="listbox"
+              data-i18n-attr="aria-label:aria.idioma" aria-label="Escolher idioma">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></svg>
+        <span data-lang-atual>PT</span>
+        <svg class="lang-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ul class="lang-lista" data-lang-lista role="listbox" hidden>
+        <li><button type="button" role="option" data-lang-op="pt"><b>PT</b> Português</button></li>
+        <li><button type="button" role="option" data-lang-op="en"><b>EN</b> English</button></li>
+        <li><button type="button" role="option" data-lang-op="es"><b>ES</b> Español</button></li>
+      </ul>
+    </div>
+
+    <a class="btn btn-primary btn-sm header-cta" data-wa="header" href="index.html#agendar">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.42 1.32-1.95 1.36-.5.05-.98.23-3.3-.69-2.77-1.09-4.53-3.92-4.67-4.1-.13-.18-1.11-1.48-1.11-2.82s.7-2 .95-2.28c.25-.27.54-.34.72-.34s.36 0 .52.01c.17.01.39-.06.61.47.24.56.8 1.95.87 2.09.07.14.12.3.02.48-.09.18-.14.29-.28.45s-.29.35-.41.47c-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.22.61-.13.25.09 1.6.76 1.87.89.27.14.45.2.52.32.07.11.07.65-.17 1.33Z"/></svg>
+      <span data-i18n="nav.cta">Agendar no WhatsApp</span>
+    </a>
+
+    <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="menu-mobile" aria-label="Abrir menu" data-i18n-attr="aria-label:aria.menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+</header>
+  <div class="menu-mobile" id="menu-mobile" data-menu hidden>
+<div class="lang lang-mob" data-lang>
+      <button class="lang-btn" data-lang-btn aria-expanded="false" aria-haspopup="listbox"
+              data-i18n-attr="aria-label:aria.idioma" aria-label="Escolher idioma">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></svg>
+        <span data-lang-atual>PT</span>
+        <svg class="lang-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ul class="lang-lista" data-lang-lista role="listbox" hidden>
+        <li><button type="button" role="option" data-lang-op="pt"><b>PT</b> Português</button></li>
+        <li><button type="button" role="option" data-lang-op="en"><b>EN</b> English</button></li>
+        <li><button type="button" role="option" data-lang-op="es"><b>ES</b> Español</button></li>
+      </ul>
+    </div>
+
+  <a href="index.html#passeios" data-i18n="nav.passeios">Passeios</a>
+  <a href="index.html#cooperativa" data-i18n="nav.coop">A cooperativa</a>
+  <a href="galeria.html" data-i18n="nav.galeria">Galeria</a>
+  <a href="index.html#duvidas" data-i18n="nav.duvidas">Dúvidas</a>
+  <a class="btn btn-primary" data-wa="menu" href="index.html#agendar" data-i18n="nav.cta">Agendar no WhatsApp</a>
+</div>
+
+<main id="conteudo">
+<section class="gal-head">
+  <div class="wrap">
+    <h1 class="reveal" data-i18n="gal.h1">O mar que a gente <em>mostra todo dia.</em></h1>
+    <p class="reveal" data-i18n="gal.sub">Fotos e vídeos das travessias. Tudo feito nos nossos passeios, nada de banco de imagem.</p>
+  </div>
+</section>
+
+<section class="gal">
+  <div class="wrap">
+    <div class="gal-filtros" data-filtros role="group" aria-label="Filtrar por passeio"></div>
+    <div class="gal-grid" data-galeria></div>
+    <div class="gal-vazio" data-gal-vazio hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10.5" r="1.8"/><path d="m4 17 5-4.5 4 3.5 3-2.5 4 3.5"/></svg>
+      <h2 data-i18n="gal.vazio.h">As fotos estão chegando</h2>
+      <p data-i18n="gal.vazio.p">Ainda não subimos a galeria deste site. Enquanto isso, o dia a dia das travessias está no nosso Instagram.</p>
+      <div class="gal-vazio-cta">
+        <a class="btn btn-primary" data-social="instagram" href="#" target="_blank" rel="noopener" data-i18n="gal.vazio.btn">Ver no Instagram</a>
+        <a class="btn btn-outline" data-wa="galeria" href="index.html#agendar">Agendar no WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- visor em tela cheia -->
+<div class="visor" data-visor hidden role="dialog" aria-modal="true" aria-label="Visualizador de mídia">
+  <button class="visor-fechar" data-visor-fechar aria-label="Fechar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="visor-nav visor-ant" data-visor-ant aria-label="Anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button class="visor-nav visor-prox" data-visor-prox aria-label="Próximo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+  <figure class="visor-palco"><div data-visor-midia></div><figcaption data-visor-legenda></figcaption></figure>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div class="footer-brand">
+      <a class="brand" href="index.html" aria-label="Trilhas do Mar, ir para o início">
+        <img class="brand-mark" src="assets/img/logo-simbolo-branco.png" alt="" width="353" height="317" decoding="async">
+        <span class="brand-text"><strong>Trilhas do Mar</strong><small data-i18n="foot.marca">Cooperativa de barqueiros</small></span>
+      </a>
+      <p data-i18n="foot.desc">Travessias e navegação no sul da Ilha de Florianópolis. Turismo de baixo impacto, feito por quem é daqui.</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Passeios">
+      <h3 data-i18n="foot.passeios">Passeios</h3>
+      <a href="index.html#passeios">Pântano do Sul → Lagoinha do Leste</a>
+      <a href="index.html#passeios">Pântano do Sul → Moleques do Sul</a>
+      <a href="index.html#passeios">Pântano do Sul → Ilha das Três Irmãs</a>
+    </nav>
+
+    <div class="footer-contact">
+      <h3 data-i18n="foot.onde">Onde nos encontrar</h3>
+      <a class="f-link" data-wa="footer" href="index.html#agendar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Z"/></svg><span data-wa-display data-i18n="foot.wa">WhatsApp</span></a>
+      <p class="f-addr" data-i18n="foot.end">Ponto de embarque · Praia do Pântano do Sul<br>Florianópolis · Santa Catarina</p>
+
+      <div class="socials">
+        <a data-social="instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram do Trilhas do Mar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none"/></svg>
+          <span>Instagram</span>
+        </a>
+        <a data-social="airbnb" href="#" target="_blank" rel="noopener" aria-label="Trilhas do Mar no Airbnb">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1.3 0 2.2 1 3.4 3.4 1.7 3.4 3.6 7 3.6 9.1a3.4 3.4 0 0 1-6.1 2.1L12 16.8l-.9.8a3.4 3.4 0 0 1-6.1-2.1c0-2.1 1.9-5.7 3.6-9.1C9.8 4 10.7 3 12 3Z"/></svg>
+          <span>Airbnb</span>
+        </a>
+        <a data-social="getyourguide" href="#" target="_blank" rel="noopener" aria-label="Trilhas do Mar no GetYourGuide">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 9a4.5 4.5 0 1 0 .5 5h-4"/></svg>
+          <span>GetYourGuide</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap footer-base">
+    <p>© <span data-year>2026</span> <span data-i18n="foot.copy">Trilhas do Mar · Cooperativa de barqueiros do sul da Ilha</span></p>
+    <p class="f-safety" data-i18n="foot.safety">Todos os passeios estão sujeitos às condições meteorológicas e de navegação. A decisão de sair é sempre do barqueiro responsável.</p>
+  </div>
+</footer>
+<!-- WhatsApp flutuante -->
+<a class="wa-float" data-wa="float" href="index.html#agendar" aria-label="Agendar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.42 1.32-1.95 1.36-.5.05-.98.23-3.3-.69-2.77-1.09-4.53-3.92-4.67-4.1-.13-.18-1.11-1.48-1.11-2.82s.7-2 .95-2.28c.25-.27.54-.34.72-.34s.36 0 .52.01c.17.01.39-.06.61.47.24.56.8 1.95.87 2.09.07.14.12.3.02.48-.09.18-.14.29-.28.45s-.29.35-.41.47c-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.22.61-.13.25.09 1.6.76 1.87.89.27.14.45.2.52.32.07.11.07.65-.17 1.33Z"/></svg>
+  <span data-i18n="flut.btn">Agendar</span>
+</a>
+
+<script src="assets/js/i18n.js?v=23"></script>
+<script src="assets/js/config.js?v=23"></script>
+<script src="assets/js/galeria.js?v=23" defer></script>
+</body>
+</html>

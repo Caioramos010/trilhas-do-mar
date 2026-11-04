@@ -1,0 +1,536 @@
+<title>Trilhas do Mar</title>
+<meta name="description" content="Cooperativa de barqueiros do sul da Ilha. Travessia de barco para a Lagoinha do Leste saindo do Pântano do Sul, e navegação até a Ilha das Três Irmãs e as Ilhas Moleques do Sul. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=22">
+<a class="skip-link" href="#conteudo" data-i18n="aria.pular">Ir para o conteúdo</a>
+
+<div class="scroll-progress" aria-hidden="true"><i data-progress></i></div>
+
+<!-- ══════════ HEADER ══════════ -->
+<header class="site-header" data-header>
+  <div class="wrap header-in">
+    <a class="brand" href="#topo" data-i18n-attr="aria-label:aria.inicio" aria-label="Trilhas do Mar, ir para o início">
+      <img class="brand-mark" src="assets/img/logo-simbolo-branco.png" alt="" width="353" height="317" decoding="async">
+      <span class="brand-text">
+        <strong>Trilhas do Mar</strong>
+        <small data-i18n="marca.sub">Sul da Ilha · Florianópolis</small>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#passeios" data-i18n="nav.passeios">Passeios</a>
+      <a href="#cooperativa" data-i18n="nav.coop">A cooperativa</a>
+      <a href="#depoimentos" data-i18n="nav.depo">Depoimentos</a>
+      <a href="galeria.html" data-i18n="nav.galeria">Galeria</a>
+      <a href="#duvidas" data-i18n="nav.duvidas">Dúvidas</a>
+    </nav>
+
+    <div class="lang" data-lang>
+      <button class="lang-btn" data-lang-btn aria-expanded="false" aria-haspopup="listbox"
+              data-i18n-attr="aria-label:aria.idioma" aria-label="Escolher idioma">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></svg>
+        <span data-lang-atual>PT</span>
+        <svg class="lang-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ul class="lang-lista" data-lang-lista role="listbox" hidden>
+        <li><button type="button" role="option" data-lang-op="pt"><b>PT</b> Português</button></li>
+        <li><button type="button" role="option" data-lang-op="en"><b>EN</b> English</button></li>
+        <li><button type="button" role="option" data-lang-op="es"><b>ES</b> Español</button></li>
+      </ul>
+    </div>
+
+    <a class="btn btn-primary btn-sm header-cta" data-wa="header" href="#agendar">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.42 1.32-1.95 1.36-.5.05-.98.23-3.3-.69-2.77-1.09-4.53-3.92-4.67-4.1-.13-.18-1.11-1.48-1.11-2.82s.7-2 .95-2.28c.25-.27.54-.34.72-.34s.36 0 .52.01c.17.01.39-.06.61.47.24.56.8 1.95.87 2.09.07.14.12.3.02.48-.09.18-.14.29-.28.45s-.29.35-.41.47c-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.22.61-.13.25.09 1.6.76 1.87.89.27.14.45.2.52.32.07.11.07.65-.17 1.33Z"/></svg>
+      <span data-i18n="nav.cta">Agendar no WhatsApp</span>
+    </a>
+
+    <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="menu-mobile" aria-label="Abrir menu" data-i18n-attr="aria-label:aria.menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+</header>
+  <div class="menu-mobile" id="menu-mobile" data-menu hidden>
+<div class="lang lang-mob" data-lang>
+      <button class="lang-btn" data-lang-btn aria-expanded="false" aria-haspopup="listbox"
+              data-i18n-attr="aria-label:aria.idioma" aria-label="Escolher idioma">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></svg>
+        <span data-lang-atual>PT</span>
+        <svg class="lang-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ul class="lang-lista" data-lang-lista role="listbox" hidden>
+        <li><button type="button" role="option" data-lang-op="pt"><b>PT</b> Português</button></li>
+        <li><button type="button" role="option" data-lang-op="en"><b>EN</b> English</button></li>
+        <li><button type="button" role="option" data-lang-op="es"><b>ES</b> Español</button></li>
+      </ul>
+    </div>
+
+  <a href="#passeios" data-i18n="nav.passeios">Passeios</a>
+  <a href="#cooperativa" data-i18n="nav.coop">A cooperativa</a>
+  <a href="#depoimentos" data-i18n="nav.depo">Depoimentos</a>
+  <a href="galeria.html" data-i18n="nav.galeria">Galeria</a>
+  <a href="#duvidas" data-i18n="nav.duvidas">Dúvidas</a>
+  <a class="btn btn-primary" data-wa="menu" href="#agendar" data-i18n="nav.cta">Agendar no WhatsApp</a>
+</div>
+
+<main id="conteudo">
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="topo">
+  <div class="hero-media" aria-hidden="true">
+    <!-- SLOT DE FOTO 1 · hero. 2400x1600px, horizontal. Barco chegando na Lagoinha do Leste vista de cima. -->
+    <div class="hero-photo" data-photo="hero"></div>
+    <div class="hero-scrim"></div>
+    <div class="hero-waves">
+      <svg class="wv wv-c" viewBox="0 0 2880 160" preserveAspectRatio="none"><path d="M0 74 q 360 -58 720 0 t 720 0 t 720 0 t 720 0 V260 H0Z"/></svg>
+      <svg class="wv wv-a" viewBox="0 0 2880 160" preserveAspectRatio="none"><path d="M0 98 q 180 -46 360 0 t 360 0 t 360 0 t 360 0 t 360 0 t 360 0 t 360 0 t 360 0 V260 H0Z"/></svg>
+      <svg class="wv wv-b" viewBox="0 0 2880 160" preserveAspectRatio="none"><path d="M0 118 q 120 -30 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 V260 H0Z"/></svg>
+    </div>
+  </div>
+
+  <div class="wrap hero-in">
+
+    <h1 class="hero-title">
+      <span class="line reveal" data-i18n="hero.t1">Onde a estrada acaba,</span>
+      <span class="line reveal" data-i18n="hero.t2"><em>a gente começa.</em></span>
+    </h1>
+
+    <p class="hero-sub reveal" data-i18n="hero.sub">
+      Travessia de barco para a <strong>Lagoinha do Leste</strong> e navegação até a
+      <strong>Ilha das Três Irmãs</strong> e as <strong>Ilhas Moleques do Sul</strong>. Saída do Pântano
+      do Sul, com quem nasceu lendo esse mar.
+    </p>
+
+    <div class="hero-cta reveal">
+      <a class="btn btn-primary btn-lg" data-wa="hero" href="#agendar">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.42 1.32-1.95 1.36-.5.05-.98.23-3.3-.69-2.77-1.09-4.53-3.92-4.67-4.1-.13-.18-1.11-1.48-1.11-2.82s.7-2 .95-2.28c.25-.27.54-.34.72-.34s.36 0 .52.01c.17.01.39-.06.61.47.24.56.8 1.95.87 2.09.07.14.12.3.02.48-.09.18-.14.29-.28.45s-.29.35-.41.47c-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.22.61-.13.25.09 1.6.76 1.87.89.27.14.45.2.52.32.07.11.07.65-.17 1.33Z"/></svg>
+        <span data-i18n="hero.cta1">Agendar pelo WhatsApp</span>
+      </a>
+      <a class="btn btn-ghost btn-lg" href="#passeios" data-i18n="hero.cta2">Ver os 3 passeios</a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ══════════ PASSEIOS + MAPA ══════════ -->
+<section class="tours" id="passeios">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <h2 data-i18n="tours.h2">Três destinos. <em>Um mar só seu.</em></h2>
+      <p class="sec-sub" data-i18n="tours.sub">Os três trajetos no mapa, em escala real. Todos saem do Pântano do Sul e todos terminam onde a estrada não chega.</p>
+    </header>
+
+    <div class="tours-grid">
+
+      <!-- lista -->
+      <div class="tours-list" data-tours>
+
+        <article class="tour is-hero" data-tour="lagoinha-pantano" tabindex="0" aria-describedby="t1-desc">
+          <span class="tour-flag" data-i18n="t1.flag">Mais procurado</span>
+          <div class="tour-photo" data-photo="lagoinha"><!-- SLOT FOTO 2 · 1600x1200 · Lagoinha do Leste vista do barco --></div>
+          <div class="tour-body">
+            <p class="tour-route"><b>Pântano do Sul</b><svg class="arw" viewBox="0 0 24 8" aria-hidden="true"><path d="M0 4h20M17 1l4 3-4 3"/></svg><b>Lagoinha do Leste</b></p>
+            <h3 data-i18n="t1.h3">A travessia clássica</h3>
+            <p id="t1-desc" data-i18n="t1.desc">A praia mais preservada de Florianópolis não tem estrada: ou você encara a trilha, ou chega como os pescadores chegam há gerações. Trinta minutos costeando o morro, com a Ilha aparecendo de um ângulo que ninguém vê de carro.</p>
+            <ul class="tour-facts">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-i18n="t1.f1">~30 min de navegação</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M6 20V9l6-5 6 5v11"/></svg><span data-i18n="t1.f2">Volta no horário que você escolher</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M17 7h-6M17 7v6"/></svg><span data-i18n="t1.f3">Dá para ir de barco e voltar pela trilha</span></li>
+            </ul>
+            <div class="tour-foot">
+              <p class="price" data-price="lagoinhaPantano">Consulte pelo WhatsApp</p>
+              <a class="btn btn-primary" data-wa="tour" data-tour-name="Pântano do Sul → Lagoinha do Leste" href="#agendar" data-i18n="tour.btn">Agendar</a>
+            </div>
+          </div>
+        </article>
+
+
+        <article class="tour" data-tour="tres-irmas" tabindex="0">
+          <div class="tour-photo" data-photo="tresirmas"><!-- SLOT FOTO 5 · 1200x900 · Ilha das Três Irmãs --></div>
+          <div class="tour-body">
+            <p class="tour-route"><b>Pântano do Sul</b><svg class="arw" viewBox="0 0 24 8" aria-hidden="true"><path d="M0 4h20M17 1l4 3-4 3"/></svg><b>Ilha das Três Irmãs</b></p>
+            <h3 data-i18n="t2.h3">Água transparente, três ilhas</h3>
+            <p data-i18n="t2.desc">Três ilhas enfileiradas em frente ao sul da Ilha, com fundo de pedra e água clara. É a saída preferida de quem quer entrar na água com máscara e ver o que tem embaixo.</p>
+            <ul class="tour-facts">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-i18n="t2.f1">2 horas de passeio</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15c3-3 6 3 9 0s6-3 9 0"/><path d="M3 9c3-3 6 3 9 0s6-3 9 0"/></svg><span data-i18n="t2.f2">Parada para banho e snorkel</span></li>
+              <li class="fato-alerta"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9.5" r="2.4"/><path d="M3 19c0-3.3 2.7-5 6-5s6 1.7 6 5"/><path d="M16 14.5c2.8.3 5 1.9 5 4.5"/></svg>Mínimo de 8 pessoas, com reserva antecipada</li>
+            </ul>
+            <div class="tour-foot">
+              <p class="price" data-price="tresIrmas">Consulte pelo WhatsApp</p>
+              <a class="btn btn-outline" data-wa="tour" data-tour-name="Pântano do Sul → Ilha das Três Irmãs" href="#agendar" data-i18n="tour.btn">Agendar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tour" data-tour="moleques" tabindex="0">
+          <span class="tour-flag flag-eco" data-i18n="t3.flag">Área protegida</span>
+          <div class="tour-photo" data-photo="moleques"><!-- SLOT FOTO 4 · 1200x900 · Ilhas Moleques do Sul --></div>
+          <div class="tour-body">
+            <p class="tour-route"><b>Pântano do Sul</b><svg class="arw" viewBox="0 0 24 8" aria-hidden="true"><path d="M0 4h20M17 1l4 3-4 3"/></svg><b>Ilhas Moleques do Sul</b></p>
+            <h3 data-i18n="t3.h3">Mar aberto e vida selvagem</h3>
+            <p data-i18n="t3.desc">As Moleques fazem parte do <b>Parque Estadual da Serra do Tabuleiro</b> e abrigam o preá-das-Moleques, um mamífero que não existe em nenhum outro lugar do planeta. Navegação e contemplação ao redor das ilhas, sem desembarque, porque é assim que se protege o que é raro.</p>
+            <ul class="tour-facts">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-i18n="t3.f1">4 horas de passeio</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15c3-3 6 3 9 0s6-3 9 0"/><path d="M3 9c3-3 6 3 9 0s6-3 9 0"/></svg><span data-i18n="t3.f2">Parada para banho e snorkel</span></li>
+              <li class="fato-alerta"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9.5" r="2.4"/><path d="M3 19c0-3.3 2.7-5 6-5s6 1.7 6 5"/><path d="M16 14.5c2.8.3 5 1.9 5 4.5"/></svg>Mínimo de 8 pessoas, com reserva antecipada</li>
+            </ul>
+            <div class="tour-foot">
+              <p class="price" data-price="moleques">Consulte pelo WhatsApp</p>
+              <a class="btn btn-outline" data-wa="tour" data-tour-name="Pântano do Sul → Ilhas Moleques do Sul" href="#agendar" data-i18n="tour.btn">Agendar</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- mapa sticky -->
+      <aside class="map-panel">
+        <div class="map-card">
+          <div class="map-head">
+            <p class="map-title" data-map-title>Pântano do Sul → Lagoinha do Leste</p>
+            <ul class="map-facts" data-map-facts></ul>
+          </div>
+
+          <svg class="map" viewBox="0 0 680 614" role="img" aria-labelledby="map-t">
+            <title id="map-t">Mapa do sul da Ilha de Florianópolis com as rotas de barco do Trilhas do Mar</title>
+            <defs>
+              <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#0d3f4a"/><stop offset="1" stop-color="#051d24"/>
+              </linearGradient>
+            </defs>
+            <rect width="680" height="614" fill="url(#seaGrad)"/>
+            <g class="map-grid" aria-hidden="true">
+              <path d="M0 0H680"/><path d="M0 88H680"/><path d="M0 176H680"/><path d="M0 264H680"/><path d="M0 352H680"/><path d="M0 440H680"/><path d="M0 528H680"/>
+              <path d="M0 0V614"/><path d="M88 0V614"/><path d="M176 0V614"/><path d="M264 0V614"/><path d="M352 0V614"/><path d="M440 0V614"/><path d="M528 0V614"/><path d="M616 0V614"/>
+            </g>
+            <path class="land" d="M-205.1 36.4 L-202.0 35.1 L-184.4 43.2 L-171.3 52.4 L-167.1 58.5 L-166.9 64.9 L-170.2 67.4 L-166.6 75.2 L-167.0 81.8 L-173.1 91.4 L-176.0 92.5 L-175.1 95.1 L-177.6 97.2 L-177.4 99.3 L-174.3 100.7 L-173.2 103.7 L-176.0 111.3 L-173.7 120.5 L-175.0 126.9 L-168.6 130.9 L-166.1 136.2 L-159.2 142.2 L-154.4 150.2 L-150.5 161.8 L-151.3 179.3 L-137.3 177.8 L-124.7 182.1 L-123.8 180.8 L-121.7 185.3 L-120.2 185.5 L-120.3 187.4 L-116.9 185.3 L-114.5 188.7 L-110.0 188.4 L-101.1 193.2 L-94.8 202.1 L-96.2 205.7 L-93.2 212.5 L-94.5 214.6 L-96.3 214.5 L-96.0 218.5 L-99.3 224.7 L-102.4 229.1 L-105.3 230.0 L-105.7 232.6 L-109.5 236.9 L-114.6 240.2 L-114.7 242.1 L-120.4 243.4 L-126.7 252.3 L-132.8 267.8 L-130.1 270.5 L-129.9 274.7 L-127.0 278.4 L-128.2 284.2 L-127.3 286.9 L-120.5 286.8 L-115.5 289.6 L-102.2 302.6 L-99.2 308.6 L-100.2 318.9 L-97.1 324.4 L-95.6 323.3 L-92.3 325.3 L-89.5 337.3 L-98.1 352.1 L-100.2 354.3 L-109.1 357.2 L-114.1 362.1 L-115.8 362.1 L-116.6 364.1 L-115.0 364.6 L-115.1 366.3 L-125.3 377.5 L-124.4 391.0 L-128.2 399.9 L-128.1 403.8 L-126.4 404.4 L-129.5 408.4 L-137.1 414.1 L-140.6 419.1 L-139.9 433.4 L-141.1 433.1 L-146.0 441.2 L-149.2 449.7 L-149.6 463.4 L-155.2 480.8 L-153.3 483.7 L-150.0 485.2 L-150.3 486.3 L-146.9 486.9 L-144.6 484.6 L-140.8 483.6 L-141.2 482.2 L-138.7 479.2 L-132.6 477.8 L-131.6 472.0 L-129.7 470.6 L-110.3 471.2 L-98.8 476.3 L-93.3 481.2 L-96.7 492.5 L-93.7 502.4 L-91.1 502.6 L-81.1 492.2 L-72.9 488.8 L-70.5 483.5 L-57.1 476.4 L-53.0 472.1 L-47.1 469.5 L-38.6 463.0 L-31.4 460.4 L-26.8 455.5 L-24.5 455.8 L-22.8 452.2 L-18.9 450.5 L-16.6 447.7 L-13.0 446.3 L-9.4 448.4 L2.2 432.2 L9.3 406.4 L8.6 402.0 L12.9 391.5 L13.4 381.7 L16.2 375.1 L17.9 364.3 L15.3 356.0 L15.8 350.2 L26.5 342.0 L32.8 330.0 L39.4 311.0 L41.7 309.4 L42.7 306.0 L42.3 303.4 L34.8 292.4 L34.2 284.1 L38.6 274.1 L50.6 263.9 L49.5 256.1 L44.3 249.6 L44.4 240.7 L64.7 206.0 L81.8 183.7 L97.9 167.8 L126.0 150.2 L139.1 145.8 L156.4 143.4 L172.6 144.7 L184.3 148.2 L193.8 153.0 L199.0 158.4 L195.4 167.5 L191.2 195.9 L197.0 205.3 L208.1 217.7 L211.2 220.2 L222.1 222.4 L233.9 219.0 L239.8 226.3 L244.2 229.0 L252.9 228.7 L269.6 223.7 L279.1 216.3 L283.4 206.4 L287.5 202.0 L290.9 201.2 L299.9 202.4 L306.1 197.6 L313.2 187.3 L312.3 179.2 L313.5 175.1 L323.4 173.7 L328.7 161.5 L328.4 156.5 L315.4 144.1 L311.8 134.3 L301.8 127.3 L299.9 121.8 L303.3 112.4 L313.5 93.0 L321.7 82.0 L332.5 72.1 L334.3 71.8 L337.7 75.4 L341.2 76.0 L347.0 74.4 L351.6 75.1 L357.3 83.4 L359.2 84.0 L362.8 82.3 L369.1 76.0 L369.1 69.7 L361.0 58.6 L359.5 53.0 L360.1 40.4 L362.8 32.8 L356.7 25.3 L352.3 23.5 L342.7 24.5 L332.4 18.6 L316.3 12.4 L313.9 9.5 L311.6 1.1 L306.4 -5.9 L306.2 -13.6 L302.5 -16.8 L297.4 -14.9 L298.1 -16.9 L294.0 -14.6 L285.5 -13.8 L266.6 -3.3 L257.3 -3.9 L250.6 -9.4 L244.5 -18.8 L233.8 -42.8 L235.7 -47.0 L239.6 -47.0 L241.9 -49.4 L244.2 -54.5 L240.4 -57.0 L240.8 -58.8 L242.5 -61.3 L246.8 -62.1 L246.4 -65.2 L240.8 -63.4 L235.7 -59.5 L235.7 -54.8 L232.2 -48.2 L226.5 -48.4 L218.3 -51.3 L208.6 -57.3 L205.1 -61.8 L198.9 -74.0 L194.8 -89.3 L192.5 -145.2 L194.4 -167.1 L203.1 -200.0 L208.4 -212.6 L216.0 -220.4 L219.9 -234.0 L220.0 -246.0 L217.6 -249.4 L219.9 -258.7 L241.7 -304.8 L254.1 -325.7 L271.5 -350.8 L289.9 -371.1 L-408.0 -371.1 L-408.0 36.4 Z"/>
+            <path class="land-line" d="M-52.8 -364.3 L-50.7 -356.8 L-53.3 -353.9 L-52.7 -350.5 L-55.8 -344.7 L-62.5 -340.9 L-63.5 -338.7 L-71.7 -336.9 L-73.3 -326.7 L-79.6 -323.0 L-79.3 -319.3 L-84.4 -311.9 L-92.2 -306.5 L-96.5 -293.9 L-95.7 -287.5 L-99.2 -285.0 L-99.3 -280.2 L-104.9 -271.7 L-108.1 -259.7 L-118.5 -251.0 L-119.3 -247.0 L-116.9 -236.9 L-120.1 -226.8 L-112.0 -213.3 L-113.4 -208.9 L-118.7 -202.9 L-113.6 -195.7 L-113.4 -190.9 L-109.2 -184.9 L-110.2 -181.1 L-106.7 -174.2 L-109.2 -168.7 L-105.9 -164.0 L-107.3 -157.4 L-102.6 -131.8 L-105.5 -124.9 L-93.5 -118.2 L-89.5 -109.1 L-90.7 -100.4 L-86.1 -97.3 L-90.6 -80.5 L-88.9 -74.1 L-97.3 -55.0 L-96.4 -41.0 L-99.5 -36.9 L-114.5 -26.9 L-124.0 -15.9 L-139.6 -8.7 L-145.9 -1.2 L-144.8 4.1 L-147.6 6.3 L-162.3 11.9 L-194.8 21.0 L-201.7 22.5 L-204.8 20.4"/><path class="land-line" d="M415.5 -377.2 L409.4 -371.1 L415.5 -366.8 L414.0 -357.8 L415.7 -354.9 L414.0 -343.3 L408.6 -333.6 L408.9 -331.1 L410.1 -331.3 L408.7 -329.7 L415.1 -336.7 L420.0 -336.5 L420.3 -342.3 L422.7 -343.5 L424.1 -341.1 L426.5 -345.4 L425.8 -347.1 L430.2 -350.4 L434.2 -356.7 L433.1 -356.6 L434.5 -359.5 L432.9 -362.4 L433.9 -371.8 L440.2 -375.3 L440.1 -379.2 L441.8 -381.1 L441.5 -382.7 L440.2 -381.7 L440.0 -383.6 L437.1 -384.7 L440.1 -388.8 L441.7 -388.0 L439.0 -390.9 L438.9 -394.2 L440.8 -396.8 L444.9 -397.4 L448.0 -400.3 L449.1 -402.5 L448.2 -403.9 L450.3 -403.3 L447.5 -404.3 L448.3 -407.8 L447.0 -409.4 L444.6 -408.1 L442.3 -414.6 L434.9 -415.8 L426.7 -411.2 L420.8 -409.9 L418.6 -405.1 L416.4 -404.6 L417.9 -403.2 L417.5 -400.4 L419.9 -400.7"/><path class="land-line" d="M-206.5 562.9 L-204.7 569.3 L-207.4 588.7 L-206.1 590.1 L-202.3 589.9 L-198.0 585.8 L-196.9 587.1 L-196.2 586.2 L-196.8 584.1 L-191.6 578.1 L-190.2 570.4 L-185.9 564.5 L-186.9 561.0 L-185.9 559.7 L-187.5 557.8 L-186.0 557.8 L-183.7 552.4 L-185.2 551.3 L-185.5 543.1 L-182.9 542.9 L-184.2 541.5 L-181.1 542.0 L-182.2 535.5 L-185.5 532.7 L-190.7 534.3 L-194.3 538.9 L-204.6 545.2"/><path class="land-line" d="M-203.2 853.5 L-195.8 846.1 L-190.5 844.6 L-186.0 840.8 L-183.2 840.8 L-180.2 834.8 L-176.8 832.4 L-175.7 829.6 L-177.7 829.6 L-175.2 827.8 L-172.1 817.2 L-171.7 810.7 L-173.1 811.0 L-171.6 808.2 L-172.8 808.0 L-170.8 803.4 L-169.3 804.0 L-167.9 801.4 L-169.0 801.2 L-167.3 793.9 L-165.6 793.2 L-168.9 782.4 L-173.7 781.0 L-176.4 781.7 L-177.4 784.1 L-179.7 783.0 L-177.8 770.8 L-182.5 758.2 L-175.8 748.8 L-175.1 745.6 L-177.5 745.4 L-175.3 741.0 L-176.8 739.5 L-187.5 751.2 L-188.3 756.4 L-192.5 761.4 L-191.6 769.3 L-195.0 775.1 L-205.6 776.1 L-213.3 775.1 L-229.7 767.8"/>
+            <g class="isle"><path d="M133.4 475.6 L133.9 473.6 L133.5 471.3 L132.0 469.8 L130.1 469.9 L117.5 476.1 L114.8 476.8 L108.3 476.5 L106.5 477.2 L97.2 483.0 L89.8 486.0 L87.2 488.8 L86.1 491.2 L84.2 505.9 L82.5 511.7 L79.8 515.3 L73.1 519.4 L70.5 523.4 L70.6 528.2 L71.8 530.9 L80.2 538.7 L83.3 540.1 L87.6 540.0 L96.3 535.3 L99.3 532.2 L100.2 529.3 L100.1 528.1 L97.5 523.7 L97.3 520.7 L103.4 512.7 L105.5 503.2 L107.8 500.3 L109.7 499.2 L114.8 498.1 L119.7 497.9 L123.0 496.3 L126.3 491.6 L127.6 484.4 L131.9 478.7 L133.4 475.6 Z"/><path d="M212.8 476.8 L209.3 472.8 L207.9 472.4 L204.9 475.5 L202.6 479.2 L196.2 482.8 L193.9 484.6 L188.8 494.6 L188.9 496.9 L189.7 497.9 L194.6 502.2 L198.3 506.9 L199.6 507.4 L203.3 506.8 L204.5 507.1 L206.2 509.6 L207.8 513.6 L208.8 514.6 L211.7 515.6 L213.8 514.8 L215.9 511.8 L218.1 511.2 L223.0 511.1 L226.0 509.6 L228.5 506.2 L229.8 502.4 L229.4 494.6 L230.2 481.7 L229.8 477.8 L227.7 475.4 L219.5 473.7 L217.7 474.0 L214.5 476.5 L212.8 476.8 Z"/><path d="M82.2 469.4 L84.1 468.0 L85.0 463.8 L85.0 461.7 L83.5 456.8 L82.8 450.4 L85.2 448.8 L87.6 448.2 L88.2 447.2 L89.8 448.2 L90.1 447.1 L89.4 442.5 L87.7 440.0 L86.8 439.6 L84.4 440.3 L80.9 443.7 L75.3 445.0 L71.1 458.5 L71.6 460.3 L75.7 464.8 L77.7 468.1 L80.8 469.6 L82.2 469.4 Z"/><path d="M612.2 557.1 L611.9 552.2 L613.0 552.7 L612.9 553.9 L614.1 555.1 L616.4 553.8 L618.4 550.8 L617.6 550.5 L616.4 551.4 L617.9 548.6 L621.3 544.1 L625.6 541.8 L626.6 538.3 L626.0 533.8 L619.2 530.3 L614.6 531.1 L612.3 536.4 L613.0 536.8 L612.0 538.6 L611.5 541.0 L607.6 545.3 L601.5 553.9 L595.8 557.4 L594.8 559.9 L596.7 560.3 L602.4 557.7 L609.8 556.3 L609.3 558.1 L612.2 557.1 Z"/><path d="M140.7 475.3 L139.2 475.2 L138.6 475.8 L137.7 475.5 L138.4 477.3 L137.2 477.7 L137.3 478.1 L138.0 477.9 L138.5 478.5 L138.7 477.3 L140.7 475.3 Z"/><path d="M622.8 526.7 L624.6 525.9 L623.8 525.2 L625.0 524.8 L624.6 523.0 L623.1 522.9 L622.8 522.0 L627.5 521.8 L628.3 520.1 L618.7 519.6 L616.4 522.0 L616.7 525.4 L619.2 527.0 L622.8 526.7 Z"/><path d="M613.2 503.3 L612.8 502.8 L612.4 503.1 L612.3 504.6 L613.4 504.5 L613.6 503.4 L613.2 503.3 Z"/><path d="M613.8 512.9 L616.0 509.0 L615.9 507.0 L613.0 507.3 L610.8 508.8 L611.5 510.8 L613.8 512.9 Z"/></g>
+            <path class="route" data-route="lagoinha-pantano" d="M132.7 172.3 C139.1 177.2 155.4 189.9 170.9 201.9 C186.4 213.9 197.2 244.8 225.6 244.4 C254.1 244.0 326.5 223.8 341.4 199.5 C356.4 175.2 319.7 115.3 315.4 98.5"/>
+            <path class="route" data-route="tres-irmas"       d="M132.7 172.3 C134.1 197.7 138.2 271.8 141.1 324.8 C144.0 377.7 148.7 462.4 150.2 489.9"/>
+            <path class="route" data-route="moleques"         d="M132.7 172.3 C156.0 190.4 222.8 244.6 272.6 281.1 C322.4 317.7 373.4 351.2 431.7 391.5 C489.9 431.9 590.5 501.3 622.3 523.3"/>
+            <g class="boat" data-boat aria-hidden="true">
+              <path d="M-8 2h16l-3 6H-5z"/><path d="M0 2V-7l7 5H0z"/>
+            </g>
+            <g class="pin" data-pin="pantano" transform="translate(132.7,172.3)"><circle class="halo" r="6"/><circle r="6"/><text x="14" y="4" text-anchor="start">Pântano do Sul</text></g>
+            <g class="pin" data-pin="lagoinha" transform="translate(315.4,98.5)"><circle class="halo" r="6"/><circle r="6"/><text x="14" y="4" text-anchor="start">Lagoinha do Leste</text></g>
+            <g class="pin" data-pin="tres-irmas" transform="translate(150.2,489.9)"><circle class="halo" r="6"/><circle r="6"/><text x="14" y="4" text-anchor="start">Ilhas das Três Irmãs</text></g>
+            <g class="pin" data-pin="moleques" transform="translate(622.3,523.3)"><circle class="halo" r="6"/><circle r="6"/><text x="-14" y="4" text-anchor="end">Ilhas Moleques do Sul</text></g>
+            <text class="map-mar" x="470" y="300" text-anchor="middle" aria-hidden="true">OCEANO ATLÂNTICO</text>
+            <g class="map-scale" aria-hidden="true">
+              <path d="M22 588h111M22 583v10M133 583v10"/>
+              <text x="78" y="578" text-anchor="middle">2 km</text>
+            </g>
+            <g class="map-north" aria-hidden="true">
+              <path d="M648 52V20M642 28l6-8 6 8"/>
+              <text x="648" y="68" text-anchor="middle">N</text>
+            </g>
+          </svg>
+
+          <p class="map-note" data-i18n="map.nota">Costa, ilhas e distâncias em escala real, com dados dos colaboradores do <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. As rotas são o traçado habitual: o caminho do dia depende do mar, e quem decide é o barqueiro.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ COOPERATIVA ══════════ -->
+<section class="coop" id="cooperativa">
+  <div class="coop-bg" aria-hidden="true"></div>
+  <div class="wrap coop-in">
+    <div class="coop-copy">
+      <h2 class="reveal" data-i18n="coop.h2">Uma <em>cooperativa,</em> não uma agência.</h2>
+      <p class="lead reveal" data-i18n="coop.lead">
+        O Trilhas do Mar é formado por barqueiros do próprio sul da Ilha, gente que aprendeu a ler
+        esse mar antes de aprender a dirigir. A maior parte de quem trabalha aqui nasceu ou mora
+        no Pântano do Sul e na volta dele.
+      </p>
+      <p class="reveal" data-i18n="coop.p2">
+        Ser cooperativa muda duas coisas na prática: o dinheiro do passeio fica na comunidade em vez
+        de ir embora da Ilha, e quem está no timão tem motivo pessoal para cuidar da praia que ele
+        mesmo frequenta no domingo.
+      </p>
+
+      <ul class="coop-points">
+        <li class="reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-7-10a7 7 0 1 1 14 0c0 5.4-7 10-7 10Z"/><circle cx="12" cy="11" r="2.6"/></svg>
+          <div><b data-i18n="coop.1t">Gente da região</b><span data-i18n="coop.1d">A maioria dos barqueiros é do Pântano do Sul e da Costa de Dentro. Conhecimento de mar que não se aprende em curso.</span></div>
+        </li>
+        <li class="reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3.5 3 5.5 6 5.5 9.2A5.5 5.5 0 0 1 12 18a5.5 5.5 0 0 1-5.5-5.8C6.5 9 8.5 6 12 3Z"/><path d="M12 18v3"/></svg>
+          <div><b data-i18n="coop.2t">Turismo ecológico de verdade</b><span data-i18n="coop.2d">Grupos pequenos, sem desembarque em área protegida, sem lixo deixado para trás e sem barulho onde há ninho de ave marinha.</span></div>
+        </li>
+        <li class="reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.8 8 10 4.6-1.2 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <div><b data-i18n="coop.3t">Segurança sem discurso</b><span data-i18n="coop.3d">Colete salva-vidas para cada passageiro, equipamento de segurança a bordo e saída cancelada sempre que o mar mandar cancelar.</span></div>
+        </li>
+        <li class="reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9.5" r="2.4"/><path d="M3 19c0-3.3 2.7-5 6-5s6 1.7 6 5"/><path d="M16 14.5c2.8.3 5 1.9 5 4.5"/></svg>
+          <div><b data-i18n="coop.4t">Até 20 pessoas por embarcação</b><span data-i18n="coop.4d">Barco cheio de gente amontoada não é passeio. O grupo é pequeno de propósito.</span></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="coop-media reveal">
+      <!-- SLOT FOTO 6 · 1200x1500 vertical · barqueiro da cooperativa no barco -->
+      <div class="coop-photo" data-photo="barqueiro"></div>
+      <figcaption class="coop-cap">
+        <b data-i18n="coop.capt">Os barqueiros da cooperativa</b>
+        <span data-i18n="coop.caps">Pântano do Sul, Florianópolis · SC</span>
+      </figcaption>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ A TRAVESSIA (cena animada) ══════════ -->
+<section class="crossing" id="a-travessia" aria-label="A travessia, do embarque ao desembarque">
+  <div class="scene" aria-hidden="true">
+    <div class="sky"><span class="sun"></span></div>
+
+    <div class="layer clouds">
+      <svg viewBox="0 0 1600 200" preserveAspectRatio="none"><g>
+        <ellipse cx="150" cy="96" rx="96" ry="40"/><ellipse cx="216" cy="78" rx="70" ry="34"/><ellipse cx="270" cy="100" rx="78" ry="32"/>
+        <ellipse cx="690" cy="72" rx="110" ry="34"/><ellipse cx="768" cy="60" rx="76" ry="28"/>
+        <ellipse cx="1150" cy="104" rx="104" ry="38"/><ellipse cx="1224" cy="88" rx="72" ry="30"/>
+        <ellipse cx="1560" cy="92" rx="92" ry="38"/>
+      </g></svg>
+    </div>
+
+    <div class="layer hills-far">
+      <svg viewBox="0 0 1600 300" preserveAspectRatio="none"><path d="M0 300 V180 Q70 96 150 158 Q230 214 300 124 Q372 38 440 132 Q512 226 580 168 Q648 104 720 172 Q766 212 800 180 Q870 96 950 158 Q1030 214 1100 124 Q1172 38 1240 132 Q1312 226 1380 168 Q1448 104 1520 172 Q1566 212 1600 180 V300 Z"/></svg>
+    </div>
+
+    <div class="layer hills-near">
+      <svg viewBox="0 0 1600 300" preserveAspectRatio="none"><path d="M0 300 V220 Q88 150 170 202 Q252 250 320 180 Q392 112 460 188 Q532 258 600 214 Q668 166 740 218 Q776 244 800 220 Q888 150 970 202 Q1052 250 1120 180 Q1192 112 1260 188 Q1332 258 1400 214 Q1468 166 1540 218 Q1576 244 1600 220 V300 Z"/></svg>
+    </div>
+
+    <div class="layer isles">
+      <svg viewBox="0 0 1600 200" preserveAspectRatio="none"><g>
+        <path d="M60 200 Q108 116 160 200 Z M250 200 Q282 150 316 200 Z M520 200 Q578 104 640 200 Z M860 200 Q908 116 960 200 Z M1050 200 Q1082 150 1116 200 Z M1320 200 Q1378 104 1440 200 Z"/>
+      </g></svg>
+    </div>
+
+    <div class="boat-wrap">
+      <svg class="boat-side" viewBox="0 0 270 110">
+        <defs>
+          <!-- a silhueta do bote é uma forma só e tudo é recortado por ela:
+               assim nenhuma parte pode vazar pela borda -->
+          <clipPath id="tdm-bote">
+            <path d="M42 52 L42 74 Q44 86 58 86 L172 86 Q206 82 226 56 Q234 46 222 44 Q202 46 184 50 L58 56 Q42 56 42 52 Z"/>
+          </clipPath>
+        </defs>
+        <g class="motor">
+          <path d="M28 48h14v20h-5v10l-4 8-5-3v-15h-3v-6h3Z"/>
+          <path d="M30 80h9l-2 6h-5Z"/>
+        </g>
+        <path class="casco" d="M42 52 L42 74 Q44 86 58 86 L172 86 Q206 82 226 56 Q234 46 222 44 Q202 46 184 50 L58 56 Q42 56 42 52 Z"/>
+        <g clip-path="url(#tdm-bote)">
+          <path class="casco-sombra" d="M30 74 L174 82 Q204 78 232 56 L236 96 L30 96 Z"/>
+          <path class="tubo" d="M38 62 L184 56 Q212 52 232 46"/>
+          <path class="tubo-luz" d="M50 57 L182 51 Q208 48 226 44"/>
+          <g class="cabo">
+            <path d="M76 61 L96 60"/><path d="M120 58 L140 57"/><path d="M164 55 L184 52"/>
+          </g>
+        </g>
+      </svg>
+      <div class="wake"></div>
+    </div>
+
+    <div class="layer sea sea-3"><svg viewBox="0 0 1600 120" preserveAspectRatio="none"><path d="M0 40 q100 -26 200 0 t200 0 t200 0 t200 0 t200 0 t200 0 t200 0 t200 0 V120 H0Z"/></svg></div>
+    <div class="layer sea sea-2"><svg viewBox="0 0 1600 120" preserveAspectRatio="none"><path d="M0 58 q80 -30 160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 V120 H0Z"/></svg></div>
+    <div class="layer sea sea-1"><svg viewBox="0 0 1600 120" preserveAspectRatio="none"><path d="M0 80 q50 -22 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 V120 H0Z"/></svg></div>
+
+    <svg class="gull g1" viewBox="0 0 40 16"><path d="M2 12c6 0 8-8 13-8s7 8 13 8"/></svg>
+    <svg class="gull g2" viewBox="0 0 40 16"><path d="M2 12c6 0 8-8 13-8s7 8 13 8"/></svg>
+    <svg class="gull g3" viewBox="0 0 40 16"><path d="M2 12c6 0 8-8 13-8s7 8 13 8"/></svg>
+  </div>
+
+</section>
+
+<!-- ══════════ VÍDEO DA TRAVESSIA ══════════ -->
+<section class="filme" id="o-video">
+  <div class="wrap">
+   <div class="filme-copy">
+    <h2 class="reveal" data-i18n="video.h2">Chegando na <em>Lagoinha do Leste.</em></h2>
+    <p class="reveal" data-i18n="video.sub">Filmado do costão, num dia comum de travessia.</p>
+   </div>
+  </div>
+  <figure class="filme-palco">
+    <video data-video class="filme-video"
+           poster="assets/video/travessia-poster.jpg"
+           autoplay muted loop playsinline preload="none"
+           data-src="assets/video/travessia.mp4"
+           aria-label="Bote do Trilhas do Mar chegando na Lagoinha do Leste"></video>
+  </figure>
+</section>
+
+<!-- ══════════ DEPOIMENTOS ══════════ -->
+<!-- ═══════════════════════════════════════════════════════════════════════
+     ⚠️  ATENÇÃO: OS DEPOIMENTOS ABAIXO SÃO EXEMPLOS DE ESTRUTURA.
+     ANTES DE PUBLICAR, SUBSTITUA POR AVALIAÇÕES REAIS DO AIRBNB /
+     GETYOURGUIDE / GOOGLE. Publicar avaliação inventada é propaganda
+     enganosa, e o cliente já tem avaliações reais para usar.
+     ═══════════════════════════════════════════════════════════════════════ -->
+<section class="reviews" id="depoimentos">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <h2 data-i18n="rev.h2">O que ficou <em>depois da travessia.</em></h2>
+      <div class="rating">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <b data-rating></b>
+        <small data-rev-frase></small>
+      </div>
+    </header>
+  </div>
+
+  <div class="reviews-rail" data-rail tabindex="0" aria-label="Depoimentos de clientes (role para o lado)">
+    <div class="reviews-track" data-reviews><!-- preenchido por assets/js/main.js --></div>
+  </div>
+
+  <div class="wrap reviews-foot">
+    <div class="rail-ctrl">
+      <button class="rail-btn" data-rail-prev aria-label="Depoimento anterior" data-i18n-attr="aria-label:aria.anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button class="rail-btn" data-rail-next aria-label="Próximo depoimento" data-i18n-attr="aria-label:aria.proximo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ COMO FUNCIONA ══════════ -->
+<section class="how" id="como-funciona">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <h2 data-i18n="how.h2">Do WhatsApp ao <em>pé na areia.</em></h2>
+    </header>
+
+    <ol class="steps">
+      <li class="reveal">
+        <span class="step-n">01</span>
+        <h3 data-i18n="how.1t">Você chama no WhatsApp</h3>
+        <p data-i18n="how.1d">Diz o passeio, o dia e quantas pessoas. A gente confirma o horário da saída e a previsão do mar para aquele dia.</p>
+      </li>
+      <li class="reveal">
+        <span class="step-n">02</span>
+        <h3 data-i18n="how.2t">Encontro no costão</h3>
+        <p data-i18n="how.2d">Chegue 15 minutos antes no ponto de embarque combinado. Colete para todo mundo, orientação rápida e o barco sai.</p>
+      </li>
+      <li class="reveal">
+        <span class="step-n">03</span>
+        <h3 data-i18n="how.3t">A praia é sua</h3>
+        <p data-i18n="how.3d">Você fica o tempo que quiser. Combinamos o horário da volta na hora do desembarque, e as saídas se repetem a cada 45 minutos.</p>
+      </li>
+    </ol>
+
+    <p class="how-note reveal">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1 .5-8 5.5 5.5 0 0 1 10.5 1.5A3.5 3.5 0 0 1 17.5 18Z"/><path d="M9 21l1.5-2.5M14 21l1.5-2.5"/></svg>
+      Todo passeio depende do tempo e das condições de navegação. Se o mar não permitir sair com
+      segurança, a saída é cancelada: você remarca ou recebe o valor de volta. Quem decide é o
+      barqueiro, olhando o mar daquele dia.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════ FAQ ══════════ -->
+<section class="faq" id="duvidas">
+  <div class="wrap faq-in">
+    <header class="sec-head sec-head-left reveal">
+      <h2 data-i18n="faq.h2">Dúvidas que <em>todo mundo tem.</em></h2>
+      <p class="sec-sub" data-i18n="faq.sub">Não achou a sua? Manda no WhatsApp que a gente responde. É o mesmo número que agenda.</p>
+      <a class="btn btn-primary" data-wa="faq" href="#agendar" data-i18n="faq.btn">Perguntar no WhatsApp</a>
+    </header>
+
+    <div class="faq-list" data-faq>
+      <details class="reveal"><summary data-i18n="faq.q1">Preciso saber nadar?</summary><div><p data-i18n="faq.a1">Não. A travessia é feita com colete salva-vidas para todos os passageiros e o desembarque é na praia. Se você não nada, avise no agendamento que o barqueiro fica atento.</p></div></details>
+      <details class="reveal"><summary data-i18n="faq.q2">Criança pode ir?</summary><div><p data-i18n="faq.a2">Pode, acompanhada dos responsáveis e com colete no tamanho adequado. Avise a idade no WhatsApp para separarmos o equipamento certo antes da saída.</p></div></details>
+      <details class="reveal"><summary data-i18n="faq.q3">Quanto tempo posso ficar na Lagoinha?</summary><div><p data-i18n="faq.a3">O tempo que você quiser. Você combina o horário da volta no desembarque e as saídas se repetem a cada 45 minutos ao longo do dia.</p></div></details>
+      <details class="reveal"><summary data-i18n="faq.q4">Tem número mínimo de pessoas?</summary><div><p data-i18n="faq.a4">Para a travessia da Lagoinha do Leste, não: a saída acontece com as vagas que tiverem. Já os passeios até a <b>Ilha das Três Irmãs</b> e as <b>Ilhas Moleques do Sul</b> saem com <b>no mínimo 8 pessoas</b> e precisam ser combinados com antecedência, porque a embarcação sai só para o grupo. Se vocês forem menos, a gente avisa quando houver outro grupo para completar.</p></div></details>
+      <details class="reveal"><summary data-i18n="faq.q5">E se o mar estiver ruim no dia?</summary><div><p data-i18n="faq.a5">A saída é cancelada. Todos os passeios ficam sujeitos às condições meteorológicas e de navegação, e quem decide é o barqueiro, olhando o mar daquele dia. Você remarca sem custo ou recebe o valor de volta.</p></div></details>
+      <details class="reveal"><summary data-i18n="faq.q6">O que eu levo?</summary><div><p data-i18n="faq.a6">Água, protetor solar, chapéu e o que for comer. A Lagoinha do Leste é praia selvagem: não tem quiosque, não tem banheiro e não tem lixeira. O que entra com você precisa voltar com você.</p></div></details>
+      <details class="reveal"><summary data-i18n="faq.q7">Dá para levar prancha, cachorro ou bagagem grande?</summary><div><p data-i18n="faq.a7">Depende do espaço da embarcação e da condição do mar naquele dia. Pergunte antes no WhatsApp. Quase sempre dá, mas a gente precisa reservar o lugar.</p></div></details>
+      <details class="reveal"><summary data-i18n="faq.q8">Como pago?</summary><div><p data-i18n="faq.a8">Combinamos no agendamento. <!-- CLIENTE: confirmar meios aceitos (Pix, dinheiro, cartão) --></p></div></details>
+      <details class="reveal"><summary data-i18n="faq.q9">Precisa reservar antes?</summary><div><p data-i18n="faq.a9">Na alta temporada, sim: os barcos enchem e o horário que você quer pode não ter lugar. Fora da temporada, avise no dia anterior para confirmarmos a saída.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CTA FINAL ══════════ -->
+<section class="cta" id="agendar">
+  <div class="cta-bg" aria-hidden="true">
+    <div class="cta-waves">
+      <svg class="wv wv-a" viewBox="0 0 2880 160" preserveAspectRatio="none"><path d="M0 98 q 180 -46 360 0 t 360 0 t 360 0 t 360 0 t 360 0 t 360 0 t 360 0 t 360 0 V260 H0Z"/></svg>
+      <svg class="wv wv-b" viewBox="0 0 2880 160" preserveAspectRatio="none"><path d="M0 118 q 120 -30 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 V260 H0Z"/></svg>
+    </div>
+  </div>
+  <div class="wrap cta-in">
+    <h2 class="reveal" data-i18n="cta.h2">Escolha o destino. <em>A gente leva.</em></h2>
+    <p class="lead reveal" data-i18n="cta.lead">Manda uma mensagem com o passeio, o dia e quantas pessoas. Quem responde é barqueiro, não robô.</p>
+    <a class="btn btn-primary btn-xl reveal" data-wa="final" href="#agendar">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.42 1.32-1.95 1.36-.5.05-.98.23-3.3-.69-2.77-1.09-4.53-3.92-4.67-4.1-.13-.18-1.11-1.48-1.11-2.82s.7-2 .95-2.28c.25-.27.54-.34.72-.34s.36 0 .52.01c.17.01.39-.06.61.47.24.56.8 1.95.87 2.09.07.14.12.3.02.48-.09.18-.14.29-.28.45s-.29.35-.41.47c-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.22.61-.13.25.09 1.6.76 1.87.89.27.14.45.2.52.32.07.11.07.65-.17 1.33Z"/></svg>
+      <span data-i18n="cta.btn">Agendar no WhatsApp</span>
+    </a>
+    <p class="cta-alt reveal" data-i18n="cta.alt">Prefere reservar por plataforma? Estamos no <a data-social="airbnb" href="#" target="_blank" rel="noopener">Airbnb Experiências</a> e no <a data-social="getyourguide" href="#" target="_blank" rel="noopener">GetYourGuide</a>.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div class="footer-brand">
+      <a class="brand" href="#topo" aria-label="Trilhas do Mar, ir para o início">
+        <img class="brand-mark" src="assets/img/logo-simbolo-branco.png" alt="" width="353" height="317" decoding="async">
+        <span class="brand-text"><strong>Trilhas do Mar</strong><small data-i18n="foot.marca">Cooperativa de barqueiros</small></span>
+      </a>
+      <p data-i18n="foot.desc">Travessias e navegação no sul da Ilha de Florianópolis. Turismo de baixo impacto, feito por quem é daqui.</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Passeios">
+      <h3 data-i18n="foot.passeios">Passeios</h3>
+      <a href="#passeios">Pântano do Sul → Lagoinha do Leste</a>
+      <a href="#passeios">Pântano do Sul → Moleques do Sul</a>
+      <a href="#passeios">Pântano do Sul → Ilha das Três Irmãs</a>
+      <a href="galeria.html" data-i18n="foot.galeria">Galeria de fotos e vídeos</a>
+    </nav>
+
+    <div class="footer-contact">
+      <h3 data-i18n="foot.onde">Onde nos encontrar</h3>
+      <a class="f-link" data-wa="footer" href="#agendar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Z"/></svg><span data-wa-display data-i18n="foot.wa">WhatsApp</span></a>
+      <p class="f-addr" data-i18n="foot.end">Ponto de embarque · Praia do Pântano do Sul<br>Florianópolis · Santa Catarina</p>
+
+      <div class="socials">
+        <a data-social="instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram do Trilhas do Mar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none"/></svg>
+          <span>Instagram</span>
+        </a>
+        <a data-social="airbnb" href="#" target="_blank" rel="noopener" aria-label="Trilhas do Mar no Airbnb">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1.3 0 2.2 1 3.4 3.4 1.7 3.4 3.6 7 3.6 9.1a3.4 3.4 0 0 1-6.1 2.1L12 16.8l-.9.8a3.4 3.4 0 0 1-6.1-2.1c0-2.1 1.9-5.7 3.6-9.1C9.8 4 10.7 3 12 3Z"/></svg>
+          <span>Airbnb</span>
+        </a>
+        <a data-social="getyourguide" href="#" target="_blank" rel="noopener" aria-label="Trilhas do Mar no GetYourGuide">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 9a4.5 4.5 0 1 0 .5 5h-4"/></svg>
+          <span>GetYourGuide</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap footer-base">
+    <p>© <span data-year>2026</span> <span data-i18n="foot.copy">Trilhas do Mar · Cooperativa de barqueiros do sul da Ilha</span></p>
+    <p class="f-safety" data-i18n="foot.safety">Todos os passeios estão sujeitos às condições meteorológicas e de navegação. A decisão de sair é sempre do barqueiro responsável.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp flutuante -->
+<a class="wa-float" data-wa="float" href="#agendar" aria-label="Agendar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.42 1.32-1.95 1.36-.5.05-.98.23-3.3-.69-2.77-1.09-4.53-3.92-4.67-4.1-.13-.18-1.11-1.48-1.11-2.82s.7-2 .95-2.28c.25-.27.54-.34.72-.34s.36 0 .52.01c.17.01.39-.06.61.47.24.56.8 1.95.87 2.09.07.14.12.3.02.48-.09.18-.14.29-.28.45s-.29.35-.41.47c-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.22.61-.13.25.09 1.6.76 1.87.89.27.14.45.2.52.32.07.11.07.65-.17 1.33Z"/></svg>
+  <span data-i18n="flut.btn">Agendar</span>
+</a>
+
+<script src="assets/js/i18n.js?v=22"></script>
+<script src="assets/js/config.js?v=22"></script>
+<script src="assets/js/main.js?v=22" defer></script>
