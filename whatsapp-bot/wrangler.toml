@@ -3,10 +3,10 @@ main = "src/index.js"
 compatibility_date = "2026-10-01"
 
 # Banco de estado do bot (quem está com a equipe, menu enviado, mensagens já vistas).
-# Troque o id pelo do namespace KV que você criar no painel (Storage & Databases → KV).
+# Namespace trilhas-whatsapp-estado (criado no painel em 05/11/2026).
 [[kv_namespaces]]
 binding = "ESTADO"
-id = "COLE_AQUI_O_ID_DO_KV"
+id = "1f83af53cec24f47a1acc64ccdb08ce4"
 
 [vars]
 GRAPH_VERSION = "v23.0"
@@ -17,3 +17,6 @@ HANDOFF_HORAS = "8"
 #   PHONE_NUMBER_ID  id do número no WhatsApp Manager
 #   APP_SECRET       chave secreta do app da Meta (valida as mensagens)
 #   VERIFY_TOKEN     uma senha qualquer que você inventa, usada na verificação do webhook
+
+[observability]
+enabled = true
