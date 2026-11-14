@@ -2,6 +2,6 @@
   "name": "trilhas-do-mar",
   "private": true,
   "scripts": {
-    "build": "rm -rf dist && mkdir -p dist && cp -R index.html galeria.html assets dist/"
+    "build": "rm -rf dist && mkdir -p dist && cp -R index.html galeria.html barco-lagoinha-do-leste.html passeio-panoramico-sul-da-ilha.html passeio-ilhas-moleques-do-sul.html como-chegar-lagoinha-do-leste.html sitemap.xml robots.txt assets dist/"
   }
 }
