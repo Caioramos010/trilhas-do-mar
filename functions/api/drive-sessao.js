@@ -119,11 +119,13 @@ async function garantirSubpasta(token, parentId, nomePasta) {
   return pasta.id;
 }
 
+const DEFAULT_DRIVE_FOLDER_ID = '1ljHShoUD_gXBM3D-FhrZCdSHpt0tQI6v';
+
 export async function onRequestPost({ request, env }) {
   const auth = autorizarEquipe(request, env);
   if (!auth.ok) return json({ ok: false, erro: auth.motivo }, 403);
 
-  const rootFolder = env.GOOGLE_DRIVE_FOLDER_ID;
+  const rootFolder = env.GOOGLE_DRIVE_FOLDER_ID || DEFAULT_DRIVE_FOLDER_ID;
   const usaOAuth = Boolean(env.GOOGLE_CLIENT_ID && env.GOOGLE_CLIENT_SECRET && env.GOOGLE_REFRESH_TOKEN && rootFolder);
   const usaSA = Boolean(env.GOOGLE_SERVICE_ACCOUNT_JSON && rootFolder);
 

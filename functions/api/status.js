@@ -1,3 +1,5 @@
+const DEFAULT_DRIVE_FOLDER_ID = '1ljHShoUD_gXBM3D-FhrZCdSHpt0tQI6v';
+
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
     status,
@@ -9,8 +11,9 @@ function json(data, status = 200) {
 }
 
 export async function onRequestGet({ env }) {
-  const driveOAuth = Boolean(env.GOOGLE_CLIENT_ID && env.GOOGLE_CLIENT_SECRET && env.GOOGLE_REFRESH_TOKEN && env.GOOGLE_DRIVE_FOLDER_ID);
-  const driveSA = Boolean(env.GOOGLE_SERVICE_ACCOUNT_JSON && env.GOOGLE_DRIVE_FOLDER_ID);
+  const folderId = env.GOOGLE_DRIVE_FOLDER_ID || DEFAULT_DRIVE_FOLDER_ID;
+  const driveOAuth = Boolean(env.GOOGLE_CLIENT_ID && env.GOOGLE_CLIENT_SECRET && env.GOOGLE_REFRESH_TOKEN && folderId);
+  const driveSA = Boolean(env.GOOGLE_SERVICE_ACCOUNT_JSON && folderId);
   const emails = String(env.EQUIPE_EMAILS || '')
     .split(',')
     .map((s) => s.trim())
@@ -18,6 +21,7 @@ export async function onRequestGet({ env }) {
 
   return json({
     ok: true,
+    pastaDriveId: folderId,
     servicos: {
       drive: driveOAuth || driveSA,
       driveModo: driveOAuth ? 'oauth_empresa' : driveSA ? 'service_account' : 'desconectado',

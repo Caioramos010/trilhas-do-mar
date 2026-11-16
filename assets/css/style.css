@@ -180,9 +180,9 @@ ul,ol{ list-style:none; padding:0; }
 .brand-text strong{ font-family:var(--ff-display); font-weight:800; font-size:1.12rem; letter-spacing:-.03em; color:var(--on-dark); }
 .brand-text small{ font-size:.72rem; color:var(--on-dark-soft); letter-spacing:.04em; }
 
-.nav{ display:flex; align-items:center; gap:clamp(.6rem,1vw,1.1rem); }
+.nav{ display:flex; align-items:center; gap:clamp(1rem,1.8vw,1.8rem); }
 .nav a{
-  position:relative; font-size:.88rem; font-weight:500; color:var(--on-dark-soft);
+  position:relative; font-size:.95rem; font-weight:500; color:var(--on-dark-soft);
   padding:.35rem 0; transition:color var(--t-fast); white-space:nowrap;
 }
 .nav a::after{
@@ -750,7 +750,7 @@ ul,ol{ list-style:none; padding:0; }
   .footer-in{ grid-template-columns:1fr 1fr; }
   .footer-brand{ grid-column:1 / -1; }
 }
-@media (max-width:1180px){
+@media (max-width:1000px){
   .nav{ display:none; }
   .nav-toggle{ display:flex; }
   .menu-mobile{ display:flex; }
@@ -1054,8 +1054,8 @@ ul,ol{ list-style:none; padding:0; }
 .lang-mob .lang-btn{ width:100%; justify-content:space-between; min-height:48px; font-size:1rem; }
 .lang-mob .lang-lista{ position:static; width:100%; margin-top:.4rem; box-shadow:none; }
 
-@media (max-width:1180px){ .site-header .lang{ display:none; } }
-@media (min-width:1181px){ .lang-mob{ display:none; } }
+@media (max-width:1000px){ .site-header .lang{ display:none; } }
+@media (min-width:1001px){ .lang-mob{ display:none; } }
 
 /* tarja do depoimento de exemplo (era texto no CSS, virou elemento para traduzir) */
 

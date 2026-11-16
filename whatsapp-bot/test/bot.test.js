@@ -143,3 +143,58 @@ test("worker: verificação do webhook e assinatura", async () => {
   assert.ok(esperado, "processa em segundo plano");
   await esperado.catch(() => {});
 });
+
+test("cliente vindo direto de uma página do site pula o menu e recebe o cartão do passeio", async () => {
+  const s = setup();
+  const r = await processarWebhook(
+    payloadMsgs(texto("Olá! Quero reservar o barco para a Lagoinha do Leste.")),
+    s.deps,
+  );
+  assert.deepEqual(r, ["passeio"]);
+  const [img, btn] = s.semLeitura();
+  assert.equal(img.type, "image");
+  assert.match(img.image.caption, /Lagoinha do Leste/);
+  assert.equal(btn.interactive.action.buttons[0].reply.id, "r:lagoinha");
+});
+
+test("aviso de mar fechado definido no painel aparece antes da resposta automática", async () => {
+  const s = setup();
+  await s.kv.put("painel:mar", JSON.stringify({ status: "fechado", nota: "Vento sul forte" }));
+  await processarWebhook(payloadMsgs(texto("oi")), s.deps);
+  assert.match(s.semLeitura()[0].text.body, /suspensas por condição do mar \(Vento sul forte\)/);
+  assert.equal(s.semLeitura()[1].interactive.type, "list");
+});
+
+test("endpoint /painel-whatsapp lê leads gravados no KV e atualiza condição do mar", async () => {
+  const kv = kvFalso();
+  const a = apiFalsa();
+  const env = { ...ENV, ESTADO: kv, PAINEL_PIN: "4899" };
+
+  await processarWebhook(payloadMsgs(botao("r:moleques")), { api: a.api, kv, env });
+  await processarWebhook(payloadEco(CLIENTE), { api: a.api, kv, env });
+
+  const negado = await worker.fetch(new Request("https://x/painel-whatsapp"), env, {});
+  assert.equal(negado.status, 401);
+
+  const post = await worker.fetch(
+    new Request("https://x/painel-whatsapp", {
+      method: "POST",
+      headers: { "content-type": "application/json", "x-trilhas-pin": "4899" },
+      body: JSON.stringify({ marStatus: "consulta", marNota: "Ondulação média" }),
+    }),
+    env,
+    {},
+  );
+  assert.equal(post.status, 200);
+
+  const get = await worker.fetch(
+    new Request("https://x/painel-whatsapp", { headers: { "x-trilhas-pin": "4899" } }),
+    env,
+    {},
+  );
+  assert.equal(get.status, 200);
+  const json = await get.json();
+  assert.equal(json.mar.status, "consulta");
+  assert.equal(json.leads[0].wa, CLIENTE);
+  assert.equal(json.leads[0].status, "equipe_atendendo");
+});

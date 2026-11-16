@@ -331,6 +331,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
         <span>Roteiros &amp; System</span>
       </button>
+      <button type="button" class="nav-btn" data-view="whatsapp">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg>
+        <span>WhatsApp Oficial</span>
+      </button>
       <button type="button" class="nav-btn" data-view="setup">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         <span>Equipe &amp; Setup</span>
@@ -356,7 +360,10 @@
       <img src="assets/img/logo-simbolo-branco.webp" alt="Logo Trilhas do Mar" width="353" height="317">
       <span>Trilhas Studio</span>
     </a>
-    <button type="button" class="btn-out" style="min-height:34px;padding:4px 10px;font-size:12px" data-goto="setup">Equipe &amp; Setup</button>
+    <div style="display:flex;gap:6px">
+      <button type="button" class="btn-out" style="min-height:34px;padding:4px 10px;font-size:12px" data-goto="whatsapp">WhatsApp</button>
+      <button type="button" class="btn-out" style="min-height:34px;padding:4px 10px;font-size:12px" data-goto="setup">Setup</button>
+    </div>
   </header>
 
   <!-- WORKSPACE PRINCIPAL -->
@@ -445,9 +452,12 @@
         <div class="sec-head">
           <div>
             <h2 class="sec-title">Envio Direto para o Google Drive da Empresa</h2>
-            <p class="sec-sub">Os vídeos vão do celular direto para a pasta da cooperativa no Drive (0 MB armazenados no servidor).</p>
+            <p class="sec-sub">Pasta oficial ligada ao sistema: <code>1ljHShoUD_gXBM3D-FhrZCdSHpt0tQI6v</code> (0 MB armazenados no servidor).</p>
           </div>
-          <span id="driveModeBadge" class="badge b-warn">Modo Demonstração Local</span>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+            <a class="btn-out" style="min-height:34px;padding:4px 12px;font-size:12px;text-decoration:none" href="https://drive.google.com/drive/folders/1ljHShoUD_gXBM3D-FhrZCdSHpt0tQI6v" target="_blank" rel="noopener">Abrir Pasta no Google Drive</a>
+            <span id="driveModeBadge" class="badge b-warn">Modo Demonstração Local</span>
+          </div>
         </div>
 
         <div class="dropzone">
@@ -564,7 +574,64 @@
       </div>
     </section>
 
-    <!-- MODULO 6: EQUIPE (4 LOGINS) & PASSO A PASSO DE CONFIGURACAO -->
+    <!-- MODULO 6: WHATSAPP OFICIAL & FILA DE RESERVAS -->
+    <section id="view-whatsapp" class="view">
+      <div class="op-rule">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg>
+        <div><strong>Modo Coexistência Oficial:</strong> O bot no Cloudflare Worker responde na hora com foto, valores e identificação automática do passeio da URL. Assim que o turista toca em "Quero reservar" ou um barqueiro responde no app WhatsApp Business, o bot pausa automaticamente por 8h naquela conversa.</div>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <div class="sec-head">
+            <div>
+              <h2 class="sec-title">Fila de Atendimento (WhatsApp Oficial)</h2>
+              <p class="sec-sub">Conversas captadas no webhook e clientes aguardando confirmação da equipe.</p>
+            </div>
+            <button type="button" id="btnSyncWa" class="btn-prim">Sincronizar Worker</button>
+          </div>
+
+          <div style="display:grid;gap:9px;margin-bottom:12px">
+            <label class="fld">
+              URL do Worker do WhatsApp (Cloudflare Workers)
+              <input id="waWorkerUrl" type="text" placeholder="https://trilhas-do-mar-whatsapp.SEU-USUARIO.workers.dev">
+            </label>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+              <span id="waSyncMsg" style="font-size:12px;color:var(--muted)">Cole a URL do Worker do WhatsApp para ver a fila ao vivo e sincronizar a condição do mar.</span>
+            </div>
+          </div>
+
+          <div id="waLeadsList" style="display:grid;gap:8px"></div>
+        </div>
+
+        <div class="card">
+          <h2 class="sec-title">Testador de Resposta Inteligente &amp; Coexistência</h2>
+          <p class="sec-sub">Simule o que o bot responde para quem vem de um anúncio/página ou manda mensagem solta.</p>
+
+          <div style="display:grid;gap:10px;margin-top:12px">
+            <label class="fld">
+              Mensagem recebida no WhatsApp
+              <input id="waSimInput" type="text" value="Olá! Quero reservar o barco para a Lagoinha do Leste.">
+            </label>
+            <div style="display:flex;flex-wrap:wrap;gap:6px">
+              <button type="button" class="btn-out" style="min-height:34px;font-size:12px" data-wa-sample="Olá! Quero reservar o barco para a Lagoinha do Leste.">Veio da pág. Lagoinha</button>
+              <button type="button" class="btn-out" style="min-height:34px;font-size:12px" data-wa-sample="Olá! Vim pela página das Ilhas Moleques do Sul.">Veio de Moleques</button>
+              <button type="button" class="btn-out" style="min-height:34px;font-size:12px" data-wa-sample="Oi, quanto custa o passeio?">Mensagem solta</button>
+            </div>
+            <button type="button" id="btnRunWaSim" class="btn-dark">Simular Fluxo do Bot</button>
+          </div>
+
+          <div id="waSimOut" class="timeline" style="margin-top:12px"></div>
+
+          <div class="cut" style="margin-top:14px;border-left-color:#d98a18">
+            <div class="cut-head"><span>Ajuste pendente no Bot (whatsapp-bot/src/conteudo.js)</span></div>
+            <div>Hoje o site mostra R$ 160 ida e volta para Lagoinha e o bot ainda mostra R$ 150 (9h-16h a cada 40 min) além de Moleques com guia (R$ 330). Confirme os valores oficiais para igualarmos tudo antes de ligar os anúncios.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULO 7: EQUIPE (4 LOGINS) & PASSO A PASSO DE CONFIGURACAO -->
     <section id="view-setup" class="view">
       <div class="two-col">
         <div class="card">
@@ -582,10 +649,10 @@
           <h2 class="sec-title">Passo a Passo para Ligar Tudo de Graça Hoje</h2>
           <p class="sec-sub">O código das APIs já está no repositório em <code>functions/api/</code>. Falta só plugar as chaves no Cloudflare Pages:</p>
           <ol style="display:grid;gap:10px;margin:12px 0 0;padding-left:18px;font-size:13px;color:var(--ink-soft)">
-            <li><strong>Criar pasta no Google Drive da empresa:</strong> crie uma pasta <code>TrilhasDoMar</code> no Drive e copie o ID dela (o código final da URL da pasta).</li>
+            <li><strong>Pasta oficial do Google Drive já definida:</strong> ID <code>1ljHShoUD_gXBM3D-FhrZCdSHpt0tQI6v</code> já configurado no backend (<code>functions/api/</code>) como padrão.</li>
             <li><strong>Gerar credencial grátis OAuth do Google Drive:</strong> no Google Cloud Console (sem cartão), ative a <strong>Google Drive API</strong>, crie credencial OAuth Web (usando OAuth Playground com escopo <code>drive.file</code>) e pegue <code>GOOGLE_CLIENT_ID</code>, <code>GOOGLE_CLIENT_SECRET</code> e <code>GOOGLE_REFRESH_TOKEN</code>.</li>
             <li><strong>Pegar chave gratuita do Gemini (Google AI Studio):</strong> gere uma API Key para analisar os roteiros no endpoint <code>/api/gerar-roteiro</code>.</li>
-            <li><strong>Colar no Cloudflare Pages → Settings → Environment variables:</strong> adicione <code>GOOGLE_DRIVE_FOLDER_ID</code>, <code>GOOGLE_CLIENT_ID</code>, <code>GOOGLE_CLIENT_SECRET</code>, <code>GOOGLE_REFRESH_TOKEN</code>, <code>GEMINI_API_KEY</code>, <code>EQUIPE_EMAILS</code> (os 4 e-mails separados por vírgula) e <code>TEAM_PIN</code>.</li>
+            <li><strong>Colar no Cloudflare Pages → Settings → Environment variables:</strong> adicione <code>GOOGLE_DRIVE_FOLDER_ID</code> (<code>1ljHShoUD_gXBM3D-FhrZCdSHpt0tQI6v</code>), <code>GOOGLE_CLIENT_ID</code>, <code>GOOGLE_CLIENT_SECRET</code>, <code>GOOGLE_REFRESH_TOKEN</code>, <code>GEMINI_API_KEY</code>, <code>EQUIPE_EMAILS</code> e <code>TEAM_PIN</code>.</li>
           </ol>
         </div>
       </div>
@@ -807,6 +874,12 @@
         { name: 'VID_coleta_restinga_01.mp4', folder: '04-Coleta-de-Lixo-Mutirao', author: 'Apoio Praia (Lagoinha)', size: '19,2 MB', status: 'Catalogado na pauta de hoje' },
         { name: 'VID_coletes_embarque_02.mp4', folder: '01-Embarque-e-Coletes', author: 'Apoio Pântano (Coletes)', size: '14,8 MB', status: 'Catalogado na pauta de hoje' }
       ]),
+      waWorkerUrl: localStorage.getItem('tdm_sw_wa_url') || '',
+      waLeads: [
+        { wa: '5548999110001', status: 'reserva_aguardando_equipe', passeio: 'Lagoinha do Leste', resumo: 'Clicou em Quero reservar (pág. Lagoinha)', atualizadoEm: 'Hoje · 14:20' },
+        { wa: '5548999220002', status: 'equipe_atendendo', passeio: 'Moleques do Sul', resumo: 'Barqueiro assumiu pelo WhatsApp Business', atualizadoEm: 'Hoje · 13:55' },
+        { wa: '5548999330003', status: 'escolheu_passeio', passeio: 'Ilha das Três Irmãs', resumo: 'Veio do site Sul da Ilha', atualizadoEm: 'Hoje · 13:12' }
+      ],
       apiOnline: { drive: false, gemini: false, loginTrava: false }
     };
     if (!TEAM[state.member]) state.member = 'direcao';
@@ -1019,6 +1092,86 @@
       }).join('');
     }
 
+    function waBadge(st) {
+      if (st === 'reserva_aguardando_equipe') return { cls: 'b-warn', txt: 'Aguardando Barqueiro' };
+      if (st === 'equipe_atendendo') return { cls: 'b-ok', txt: 'Equipe no App (Bot em pausa 8h)' };
+      if (st === 'duvida_equipe') return { cls: 'b-err', txt: 'Dúvida p/ Equipe' };
+      if (st === 'escolheu_passeio') return { cls: 'b-mar', txt: 'Abriu Passeio' };
+      return { cls: 'b-praia', txt: 'Recebeu Menu' };
+    }
+
+    function renderWaLeads() {
+      var list = document.getElementById('waLeadsList');
+      if (!list) return;
+      if (!state.waLeads || state.waLeads.length === 0) {
+        list.innerHTML = '<div class="file-row">Nenhuma conversa registrada no KV ainda.</div>';
+        return;
+      }
+      list.innerHTML = state.waLeads.map(function (l) {
+        var bm = waBadge(l.status);
+        var tel = String(l.wa || '').replace(/\D/g, '');
+        return '<div class="file-row">' +
+          '<div><strong>+' + tel + '</strong> · <span>' + (l.passeio || 'Geral') + '</span><br><span style="font-size:12px;color:var(--muted)">' + (l.resumo || '') + '</span></div>' +
+          '<div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">' +
+            '<span class="badge ' + bm.cls + '">' + bm.txt + '</span>' +
+            '<a class="btn-mini" style="text-decoration:none" href="https://wa.me/' + tel + '" target="_blank" rel="noopener">Abrir WhatsApp</a>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    }
+
+    function renderWaSim() {
+      var txt = (document.getElementById('waSimInput').value || '').toLowerCase();
+      var out = document.getElementById('waSimOut');
+      var steps = [];
+      if (state.sea === 'fechado') {
+        steps.push({ t: '1 · Aviso automático de mar', txt: 'As saídas de hoje estão suspensas por condição do mar. Quer deixar sua data de preferência?', tag: 'Lido do KV painel:mar' });
+      }
+      if (txt.indexOf('moleques') !== -1) {
+        steps.push({ t: '2 · Reconheceu passeio da URL', txt: 'Pulou menu genérico e enviou foto + valor das Ilhas Moleques do Sul (R$ 200) com botão Quero reservar.', tag: 'Detecção direta' });
+      } else if (txt.indexOf('lagoinha') !== -1) {
+        steps.push({ t: '2 · Reconheceu passeio da URL', txt: 'Pulou menu genérico e enviou foto + ficha da Lagoinha do Leste com botão Quero reservar.', tag: 'Detecção direta' });
+      } else if (txt.indexOf('sul da ilha') !== -1 || txt.indexOf('tres irmas') !== -1) {
+        steps.push({ t: '2 · Reconheceu passeio da URL', txt: 'Pulou menu genérico e enviou foto + ficha de Três Irmãs / Sul da Ilha (R$ 100) com botão Quero reservar.', tag: 'Detecção direta' });
+      } else {
+        steps.push({ t: '2 · Menu Principal', txt: 'Enviou lista interativa "Ver opções" com os passeios, ponto de embarque e falar com a equipe.', tag: 'Menu padrão' });
+      }
+      steps.push({ t: '3 · Regra de Coexistência', txt: 'Se você responder pelo WhatsApp Business do celular, o bot entra em silêncio por 8h na hora.', tag: 'smb_message_echoes' });
+      out.innerHTML = steps.map(function (s) {
+        return '<div class="cut"><div class="cut-head"><span>' + s.t + '</span></div><div>' + s.txt + '</div><span class="screen-tag">' + s.tag + '</span></div>';
+      }).join('');
+    }
+
+    async function syncWhatsAppWorker(pushSea) {
+      var url = (document.getElementById('waWorkerUrl').value || '').trim().replace(/\/+$/, '');
+      if (!url) return;
+      try { localStorage.setItem('tdm_sw_wa_url', url); } catch (e) {}
+      var pin = localStorage.getItem('tdm_sw_pin') || '';
+      var msgEl = document.getElementById('waSyncMsg');
+      try {
+        if (pushSea) {
+          await fetch(url + '/painel-whatsapp', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json', 'x-trilhas-pin': pin },
+            body: JSON.stringify({ marStatus: state.sea, marNota: state.sea === 'fechado' ? 'Condição definida no painel' : '' })
+          });
+        }
+        var res = await fetch(url + '/painel-whatsapp', { headers: { 'x-trilhas-pin': pin } });
+        var data = await res.json();
+        if (!res.ok) throw new Error(data.erro || 'Erro ao conectar');
+        if (Array.isArray(data.leads) && data.leads.length) state.waLeads = data.leads;
+        if (data.mar && data.mar.status) {
+          state.sea = data.mar.status;
+          try { localStorage.setItem('tdm_sw_sea', state.sea); } catch (e) {}
+          applySeaUI();
+        }
+        msgEl.textContent = data.whatsappOficial ? 'Worker sincronizado ao vivo · API Oficial Meta ativa.' : 'Worker conectado (aguardando secrets da Meta no Worker).';
+        renderWaLeads();
+      } catch (err) {
+        msgEl.textContent = 'Não foi possível conectar em ' + url + ': ' + err.message;
+      }
+    }
+
     function applySeaUI() {
       document.querySelectorAll('.sea-btn').forEach(function (b) {
         var s = b.getAttribute('data-sea');
@@ -1110,6 +1263,8 @@
         state.sea = this.getAttribute('data-sea');
         try { localStorage.setItem('tdm_sw_sea', state.sea); } catch (e) {}
         applySeaUI();
+        syncWhatsAppWorker(true);
+        renderWaSim();
       });
     });
 
@@ -1233,6 +1388,17 @@
       authModal.classList.remove('open');
     });
 
+    var waUrlInput = document.getElementById('waWorkerUrl');
+    waUrlInput.value = state.waWorkerUrl;
+    document.getElementById('btnSyncWa').addEventListener('click', function () { syncWhatsAppWorker(false); });
+    document.getElementById('btnRunWaSim').addEventListener('click', renderWaSim);
+    document.querySelectorAll('[data-wa-sample]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.getElementById('waSimInput').value = this.getAttribute('data-wa-sample');
+        renderWaSim();
+      });
+    });
+
     applySeaUI();
     renderMissions();
     renderCalendar();
@@ -1240,7 +1406,10 @@
     renderCleanupStudio();
     renderScript();
     renderTeamRoster();
+    renderWaLeads();
+    renderWaSim();
     checkApiStatus();
+    if (state.waWorkerUrl) syncWhatsAppWorker(false);
   })();
 </script>
 </body>
