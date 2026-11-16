@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Painel de Mídia &amp; IA · Trilhas do Mar</title>
+<meta name="description" content="Painel interno da equipe Trilhas do Mar: missões de gravação (Barco e Praia), envio ao Google Drive e fábrica de roteiros e Reels com IA.">
+<meta name="theme-color" content="#04161B">
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/img/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --lime:#5fb733;
+    --lime-strong:#6ecb3c;
+    --lime-deep:#3d7a1c;
+    --lime-ink:#07230a;
+    --abyss:#04161b;
+    --deep:#072830;
+    --teal:#0e3c45;
+    --foam:#f7f9f5;
+    --sand:#ece7dc;
+    --card:#ffffff;
+    --ink:#08171a;
+    --ink-soft:#2c4045;
+    --muted:#5e7377;
+    --on-dark:#eef4f1;
+    --on-dark-soft:#a9c0c3;
+    --line-dark:rgba(255,255,255,.15);
+    --line-light:rgba(8,23,26,.11);
+    --sea-badge:#e3f1f5;
+    --sea-ink:#0b4b5c;
+    --sand-badge:#f4ecdc;
+    --sand-ink:#6b4c12;
+    --ff-display:"Bricolage Grotesque",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --ff-text:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --r-1:10px;
+    --r-2:14px;
+    --r-3:18px;
+    --r-pill:999px;
+    --sh:0 2px 6px rgba(6,26,30,.06),0 18px 40px -24px rgba(6,26,30,.2);
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    font-family:var(--ff-text);
+    font-size:15px;
+    line-height:1.52;
+    color:var(--ink);
+    background:var(--foam);
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:var(--ff-display);margin:0;line-height:1.15;letter-spacing:-.02em}
+  p{margin:0}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 16px}
+  @media(min-width:640px){.wrap{padding:0 24px}}
+
+  /* HEADER / SESSAO */
+  .top{
+    background:radial-gradient(circle at 85% 15%, var(--teal) 0%, var(--abyss) 65%);
+    color:var(--on-dark);
+    padding:18px 0 24px;
+    border-bottom:1px solid var(--line-dark);
+  }
+  .top-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+  .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--on-dark);font-family:var(--ff-display);font-weight:700}
+  .brand img{width:34px;height:auto;display:block}
+  .session-box{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .session-pill{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(95,183,51,.15);border:1px solid rgba(95,183,51,.45);
+    color:#c1f3a6;font-size:12px;font-weight:600;padding:6px 12px;border-radius:var(--r-pill);
+  }
+  .btn-ghost-sm{
+    appearance:none;border:1px solid var(--line-dark);background:rgba(255,255,255,.06);
+    color:var(--on-dark);font-family:var(--ff-text);font-size:12px;font-weight:600;
+    padding:7px 12px;border-radius:var(--r-1);min-height:36px;cursor:pointer;
+  }
+  .btn-ghost-sm:hover{background:rgba(255,255,255,.14)}
+
+  .hero-copy{margin-top:16px}
+  .hero-copy h1{font-size:clamp(1.45rem,3.6vw,2.15rem);color:var(--on-dark)}
+  .hero-copy h1 em{font-style:normal;color:var(--lime-strong)}
+  .hero-copy p{color:var(--on-dark-soft);margin-top:6px;font-size:14px;max-width:74ch}
+
+  /* SELETOR DE PERFIL DA EQUIPE (4 ACESSOS RESTRITOS) */
+  .role-bar{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .btn-role{
+    appearance:none;border:1px solid var(--line-dark);background:rgba(255,255,255,.06);
+    color:var(--on-dark);font-family:var(--ff-text);font-size:13px;font-weight:600;
+    padding:9px 13px;border-radius:var(--r-1);min-height:44px;cursor:pointer;
+    transition:.18s ease;flex:1 1 calc(50% - 8px);text-align:left;
+  }
+  @media(min-width:760px){.btn-role{flex:0 0 auto}}
+  .btn-role small{display:block;font-size:11.5px;font-weight:500;color:var(--on-dark-soft);margin-top:2px}
+  .btn-role.is-active{background:var(--lime);border-color:var(--lime);color:var(--lime-ink)}
+  .btn-role.is-active small{color:var(--lime-ink);opacity:.85}
+
+  /* NAVEGACAO ABAS */
+  .main{padding:20px 0 48px;display:grid;gap:20px}
+  .tabs{display:flex;overflow-x:auto;gap:8px;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+  .btn-tab{
+    appearance:none;border:1px solid var(--line-light);background:var(--card);color:var(--ink-soft);
+    font-family:var(--ff-text);font-size:13.5px;font-weight:600;padding:10px 15px;
+    border-radius:var(--r-1);min-height:44px;cursor:pointer;white-space:nowrap;flex:0 0 auto;
+  }
+  .btn-tab.is-active{background:var(--abyss);border-color:var(--abyss);color:var(--on-dark)}
+  .panel{display:none;gap:18px}
+  .panel.is-active{display:grid}
+
+  /* CARDS E ELEMENTOS */
+  .card{background:var(--card);border:1px solid var(--line-light);border-radius:var(--r-3);padding:18px;box-shadow:var(--sh)}
+  @media(min-width:640px){.card{padding:22px}}
+  .sec-head{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:14px}
+  .sec-title{font-size:clamp(1.15rem,2vw,1.38rem);color:var(--ink)}
+  .sec-sub{font-size:13.5px;color:var(--muted);margin-top:3px}
+
+  .two-col{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:860px){.two-col{grid-template-columns:1fr 1fr}}
+  .three-col{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:860px){.three-col{grid-template-columns:repeat(3,1fr)}}
+
+  /* MISSOES DE GRAVACAO (BARCO + PRAIA) */
+  .mission-list{display:grid;gap:12px}
+  .mission{
+    background:var(--foam);border:1px solid var(--line-light);border-radius:var(--r-2);
+    padding:14px;display:grid;gap:10px;
+  }
+  .mission.is-done{border-color:rgba(95,183,51,.55);background:rgba(95,183,51,.07)}
+  .m-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+  .m-tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .badge{font-size:12px;font-weight:700;padding:4px 9px;border-radius:var(--r-pill)}
+  .b-mar{background:var(--sea-badge);color:var(--sea-ink)}
+  .b-praia{background:var(--sand-badge);color:var(--sand-ink)}
+  .b-ia{background:var(--abyss);color:var(--lime-strong)}
+  .m-title{font-family:var(--ff-display);font-size:1rem;font-weight:700;color:var(--ink)}
+  .m-dir{font-size:13px;color:var(--ink-soft)}
+  .m-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;padding-top:6px;border-top:1px solid var(--line-light)}
+  .m-path{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:11.5px;color:var(--muted)}
+
+  .btn-primary{
+    appearance:none;border:0;background:var(--lime);color:var(--lime-ink);
+    font-family:var(--ff-display);font-size:13.5px;font-weight:700;
+    padding:9px 14px;border-radius:var(--r-pill);min-height:42px;cursor:pointer;
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .btn-primary:hover{background:var(--lime-strong)}
+  .btn-outline{
+    appearance:none;border:1px solid var(--line-light);background:var(--card);color:var(--ink);
+    font-family:var(--ff-text);font-size:13px;font-weight:600;
+    padding:8px 13px;border-radius:var(--r-1);min-height:40px;cursor:pointer;
+  }
+  .btn-outline:hover{background:var(--sand)}
+
+  /* UPLOAD GOOGLE DRIVE */
+  .drive-box{
+    border:2px dashed rgba(61,122,28,.35);background:rgba(95,183,51,.05);
+    border-radius:var(--r-2);padding:16px;display:grid;gap:12px;
+  }
+  .form-row{display:grid;grid-template-columns:1fr;gap:10px}
+  @media(min-width:640px){.form-row{grid-template-columns:1fr 1fr 1fr}}
+  label.fld{display:grid;gap:4px;font-size:12.5px;font-weight:600;color:var(--ink-soft)}
+  select,input[type=text],textarea{
+    width:100%;padding:10px 12px;border:1px solid var(--line-light);border-radius:var(--r-1);
+    font-family:var(--ff-text);font-size:14px;background:var(--card);color:var(--ink);
+  }
+  .queue-item{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;
+    background:var(--card);border:1px solid var(--line-light);border-radius:var(--r-1);
+    padding:10px 12px;font-size:13px;
+  }
+
+  /* SYSTEM DESIGN + DECUPAGEM COLETA LAGOINHA */
+  .tokens-row{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+  @media(min-width:700px){.tokens-row{grid-template-columns:repeat(4,1fr)}}
+  .tok{border-radius:var(--r-2);padding:12px;border:1px solid var(--line-light);font-size:12.5px}
+  .tok b{display:block;font-family:var(--ff-display);font-size:14px;margin-bottom:2px}
+
+  .reel-card{
+    border:1px solid var(--line-light);border-radius:var(--r-2);padding:16px;background:var(--foam);
+    display:flex;flex-direction:column;justify-content:space-between;gap:12px;
+  }
+  .scene-list{display:grid;gap:8px;margin-top:6px}
+  .scene{
+    background:var(--card);border:1px solid var(--line-light);border-left:4px solid var(--lime);
+    border-radius:8px;padding:9px 11px;font-size:12.5px;
+  }
+  .scene-head{display:flex;justify-content:space-between;gap:6px;font-weight:700;color:var(--ink);margin-bottom:3px}
+  .scene-screen{display:inline-block;background:var(--abyss);color:var(--lime-strong);font-weight:700;font-size:11.5px;padding:2px 7px;border-radius:5px;margin-top:4px}
+
+  /* TELEPROMPTER */
+  .tele-box{
+    background:var(--abyss);color:var(--on-dark);border-radius:var(--r-2);padding:16px;
+    border:1px solid var(--line-dark);display:grid;gap:10px;
+  }
+  .tele-line{font-family:var(--ff-display);font-size:clamp(1.05rem,2.4vw,1.3rem);line-height:1.4}
+  .tele-line mark{background:var(--lime);color:var(--lime-ink);padding:1px 5px;border-radius:4px;font-weight:700}
+
+  /* MODAL LOGIN BLOQUEADO (DEMO) */
+  .modal-bg{
+    position:fixed;inset:0;z-index:200;background:rgba(4,22,27,.84);
+    display:none;align-items:center;justify-content:center;padding:16px;
+  }
+  .modal-bg.open{display:flex}
+  .modal{
+    background:var(--card);border-radius:var(--r-3);max-width:440px;width:100%;
+    padding:22px;display:grid;gap:12px;box-shadow:0 24px 60px rgba(0,0,0,.4);
+  }
+  .alert-err{background:#fdecea;color:#8c1d18;border:1px solid #f5c2be;padding:10px 12px;border-radius:var(--r-1);font-size:13px;display:none}
+  .alert-err.show{display:block}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="top-row">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo-simbolo-branco.webp" alt="Logo Trilhas do Mar" width="353" height="317">
+        <span>Trilhas do Mar · Estúdio &amp; Mídia</span>
+      </a>
+      <div class="session-box">
+        <span id="sessionBadge" class="session-pill">Sessão salva · Caio (Direção &amp; IA)</span>
+        <button type="button" id="btnOpenAuth" class="btn-ghost-sm">Testar Trava de Login (4 e-mails)</button>
+      </div>
+    </div>
+
+    <div class="hero-copy">
+      <h1>Direção de Campo + <em>Fábrica IA de Reels</em></h1>
+      <p>Organiza o trabalho mútuo entre quem está no <strong>barco</strong> e quem está na <strong>praia da Lagoinha</strong>, manda os brutos direto para o Google Drive e gera roteiros no System Design inspirado na Ecoar Turismo.</p>
+    </div>
+
+    <div class="role-bar" role="group" aria-label="Escolher integrante autorizado">
+      <button type="button" class="btn-role" data-member="joao">
+        🚤 João · Barqueiro (Mar)
+        <small>Vê só os takes do barco + subida pro Drive</small>
+      </button>
+      <button type="button" class="btn-role" data-member="marina">
+        🏝️ Marina · Praia (Lagoinha)
+        <small>Vê o que gravar na areia + Stories de retorno</small>
+      </button>
+      <button type="button" class="btn-role" data-member="pedro">
+        🚤 Pedro · Barqueiro (Ilhas)
+        <small>Foco Três Irmãs, Moleques e condição do mar</small>
+      </button>
+      <button type="button" class="btn-role is-active" data-member="caio">
+        🎬 Caio · Direção &amp; IA (Tudo)
+        <small>Gerencia missões, Drive e roteiros IA</small>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap main">
+
+  <nav class="tabs" role="tablist">
+    <button type="button" class="btn-tab is-active" data-tab="missoes">1. Missões de Hoje (Barco + Praia) &amp; Drive</button>
+    <button type="button" class="btn-tab" data-tab="coleta">2. IA · Coleta de Lixo Lagoinha (3 Reels)</button>
+    <button type="button" class="btn-tab" data-tab="roteiros">3. Gerador de Roteiros &amp; System Design</button>
+  </nav>
+
+  <!-- ABA 1: MISSOES DO DIA + UPLOAD GOOGLE DRIVE -->
+  <section id="tab-missoes" class="panel is-active">
+    <div class="card">
+      <div class="sec-head">
+        <div>
+          <h2 class="sec-title">Pauta Sincronizada de Hoje · <span id="roleHeading">Visão Completa (Barco + Praia)</span></h2>
+          <p class="sec-sub">Cada pessoa grava 10–15 segundos do seu ponto e sobe direto na pasta do Google Drive da equipe.</p>
+        </div>
+        <button type="button" id="btnResetMissions" class="btn-outline">Resetar checklist</button>
+      </div>
+
+      <div id="missionList" class="mission-list"></div>
+    </div>
+
+    <div class="card">
+      <div class="sec-head">
+        <div>
+          <h2 class="sec-title">Enviar Vídeos/Fotos Direto pro Google Drive (0 MB no servidor)</h2>
+          <p class="sec-sub">Selecione os arquivos da galeria do celular. Na versão ligada ao Worker, o envio sobe via Resumable Upload direto para a pasta escolhida no Drive da empresa.</p>
+        </div>
+      </div>
+
+      <div class="drive-box">
+        <div class="form-row">
+          <label class="fld">
+            Passeio / Pasta no Drive
+            <select id="upFolder">
+              <option value="01-Coleta-Lagoinha">01 · Mutirão Coleta de Lixo (Lagoinha)</option>
+              <option value="02-Travessia-Lagoinha">02 · Barco para Lagoinha do Leste</option>
+              <option value="03-Sul-da-Ilha-Tres-Irmas">03 · Sul da Ilha &amp; Três Irmãs</option>
+              <option value="04-Moleques-do-Sul">04 · Arquipélago Moleques do Sul</option>
+            </select>
+          </label>
+          <label class="fld">
+            Ponto de Gravação
+            <select id="upOrigin">
+              <option value="Barco (no mar)">🚤 Do Barco / Embarque</option>
+              <option value="Praia (areia da Lagoinha)">🏝️ Da Praia (Lagoinha do Leste)</option>
+            </select>
+          </label>
+          <label class="fld">
+            Nota rápida pra IA
+            <input id="upNote" type="text" placeholder="Ex.: saco de lixo recolhido perto da lagoa">
+          </label>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+          <input id="fileInput" type="file" multiple accept="video/*,image/*" style="display:none">
+          <button type="button" id="btnPickFiles" class="btn-primary">+ Selecionar Vídeos / Fotos do Celular</button>
+          <span id="driveTargetLabel" class="m-path">Destino: Drive/TrilhasDoMar/entrada/01-Coleta-Lagoinha/</span>
+        </div>
+
+        <div id="uploadQueue" style="display:grid;gap:8px"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABA 2: ANALISE DE IA PARA OS VIDEOS DA COLETA DE LIXO -->
+  <section id="tab-coleta" class="panel">
+    <div class="card">
+      <div class="sec-head">
+        <div>
+          <h2 class="sec-title">Laboratório IA · Ação de Coleta de Lixo na Lagoinha (Vídeos de Hoje)</h2>
+          <p class="sec-sub">Como a IA (Gemini Flash Vision + Regras do GrifAI) analisa os clipes brutos enviados no Drive e desdobra em 3 Reels diferentes no estilo da Ecoar Turismo.</p>
+        </div>
+        <button type="button" id="btnRunAnalysis" class="btn-primary">Simular Análise dos Brutos</button>
+      </div>
+
+      <div id="analysisStatus" class="group-box" style="background:var(--foam);border:1px solid var(--line-light);border-radius:var(--r-2);padding:12px 14px;font-size:13px;margin-bottom:14px">
+        <strong>Pipeline IA pronto:</strong> Ao selecionar os brutos na Aba 1 ou rodar a análise aqui, o Gemini identifica os melhores trechos de 2s, aplica os tokens visuais (<code>#04161b</code> + grifo <code>#5fb733</code>) e monta os 3 storyboards abaixo.
+      </div>
+
+      <div class="three-col" id="coletaReels"></div>
+    </div>
+  </section>
+
+  <!-- ABA 3: GERADOR DE ROTEIROS (5 MODELOS GRIFAI) + SYSTEM DESIGN -->
+  <section id="tab-roteiros" class="panel">
+    <div class="two-col">
+      <div class="card">
+        <h2 class="sec-title">Gerador de Roteiro Mútuo (5 Modelos)</h2>
+        <p class="sec-sub">Inspirado na gramática fixa de cenas do GrifAI: a IA preenche o formato e divide exatamente o que o barco e a praia precisam gravar.</p>
+
+        <div style="display:grid;gap:12px;margin-top:14px">
+          <label class="fld">
+            Escolha o Modelo de Reel
+            <select id="modelSelect">
+              <option value="acao_ambiental">1. Ação Ambiental / Preservação (Estilo Ecoar)</option>
+              <option value="dupla_ponta">2. Dupla Ponta (Saída do Barco + Chegada na Praia)</option>
+              <option value="resgate_trilha">3. Volta da Trilha de Barco (Para quem está na areia)</option>
+              <option value="fauna_e_ilhas">4. Fauna e Ilhas Protegidas (Moleques / Três Irmãs)</option>
+              <option value="duvida_turista">5. Dúvida Real do Turista (20s Direto ao Ponto)</option>
+            </select>
+          </label>
+          <label class="fld">
+            Assunto / Observação de hoje
+            <input id="topicInput" type="text" value="Coleta de lixo na Lagoinha do Leste com os barqueiros" placeholder="Ex.: Mar liso hoje de manhã, volta às 16h...">
+          </label>
+          <button type="button" id="btnGenScript" class="btn-primary">Gerar Divisão Barco + Praia e Teleprompter</button>
+        </div>
+
+        <div id="generatedScript" class="scene-list" style="margin-top:14px"></div>
+      </div>
+
+      <div class="card">
+        <h2 class="sec-title">System Design Trilhas × Ecoar</h2>
+        <p class="sec-sub">Padrão único de cores, cortes e legendas para todo vídeo parecer da mesma marca profissional.</p>
+
+        <div class="tokens-row">
+          <div class="tok" style="background:#04161b;color:#eef4f1"><b>#04161b</b>Mar Profundo (Tarjas)</div>
+          <div class="tok" style="background:#5fb733;color:#07230a"><b>#5fb733</b>Verde Grifo (Palavra)</div>
+          <div class="tok" style="background:#ece7dc;color:#08171a"><b>#ece7dc</b>Areia (Card Info)</div>
+          <div class="tok" style="background:#ffffff;color:#08171a"><b>1,8s–2,6s</b>Corte Dinâmico</div>
+        </div>
+
+        <h3 style="font-size:1rem;margin-top:16px;margin-bottom:8px">Prévia de Teleprompter (Gravação Rápida)</h3>
+        <div class="tele-box">
+          <div style="font-size:12px;color:#b7ef98;font-weight:700">LEIA NA PRAIA OU NO BOTE EM 15 SEGUNDOS:</div>
+          <div id="telePreview" class="tele-line">
+            "Você sabia que a <mark>Lagoinha do Leste</mark> não tem coleta pública de lixo? Hoje nossa equipe recolheu esses sacos da areia para trazer de volta no <mark>barco</mark>."
+          </div>
+          <div style="font-size:12px;color:var(--on-dark-soft)">Regra de ouro: áudio natural do mar baixo ao fundo (-22 dB) e legenda acima dos 20% inferiores da tela.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- MODAL DEMO DO LOGIN FECHADO PARA 4 PESSOAS -->
+<div id="authModal" class="modal-bg" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+  <div class="modal">
+    <h2 id="authTitle" style="font-size:1.2rem">Acesso Restrito (Equipe Trilhas do Mar)</h2>
+    <p style="font-size:13px;color:var(--muted)">No Firebase Auth + Cloudflare Worker, apenas os <strong>4 e-mails autorizados</strong> mantêm sessão no aparelho. Teste digitar um e-mail autorizado ou um de fora:</p>
+    <label class="fld">
+      E-mail para testar login
+      <input id="authEmail" type="text" value="intruso@gmail.com" placeholder="nome@gmail.com">
+    </label>
+    <div id="authErr" class="alert-err">Acesso negado: este e-mail não está na lista dos 4 integrantes autorizados da Trilhas do Mar.</div>
+    <div style="font-size:12px;color:var(--muted)">Permitidos na demo: <code>joao@trilhasdomar.com</code>, <code>marina@trilhasdomar.com</code>, <code>pedro@trilhasdomar.com</code>, <code>caio@trilhasdomar.com</code></div>
+    <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:4px">
+      <button type="button" id="btnCloseAuth" class="btn-outline">Fechar</button>
+      <button type="button" id="btnTestAuth" class="btn-primary">Testar Acesso</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var MEMBERS = {
+      joao: {
+        name: 'João',
+        role: 'Barqueiro (Mar · Lagoinha)',
+        filter: 'mar',
+        email: 'joao@trilhasdomar.com'
+      },
+      marina: {
+        name: 'Marina',
+        role: 'Praia (Lagoinha do Leste)',
+        filter: 'praia',
+        email: 'marina@trilhasdomar.com'
+      },
+      pedro: {
+        name: 'Pedro',
+        role: 'Barqueiro (Sul da Ilha & Moleques)',
+        filter: 'mar',
+        email: 'pedro@trilhasdomar.com'
+      },
+      caio: {
+        name: 'Caio',
+        role: 'Direção & IA',
+        filter: 'todos',
+        email: 'caio@trilhasdomar.com'
+      }
+    };
+
+    var MISSIONS = [
+      {
+        id: 'm1',
+        side: 'mar',
+        sideLabel: '🚤 Gravação no Barco (Pântano / Bote)',
+        tag: 'Coleta de Lixo · Hoje',
+        title: 'Sacos recolhidos entrando no bote para voltar ao Pântano',
+        dir: '10s na vertical mostrando os sacos já amarrados dentro do barco com a praia preservada ao fundo.',
+        drive: 'entrada/01-Coleta-Lagoinha/barco-retorno-lixo.mp4'
+      },
+      {
+        id: 'm2',
+        side: 'praia',
+        sideLabel: '🏝️ Gravação na Praia (Lagoinha)',
+        tag: 'Coleta de Lixo · Hoje',
+        title: 'Antes e depois: catando plástico na restinga e areia limpa',
+        dir: 'Dois clipes curtos de 5s: mão pegando resíduo da areia e plano aberto da praia limpa sem lixo.',
+        drive: 'entrada/01-Coleta-Lagoinha/praia-areia-antes-depois.mp4'
+      },
+      {
+        id: 'm3',
+        side: 'mar',
+        sideLabel: '🚤 Gravação no Barco (Navegação)',
+        tag: 'Travessia ~30 min',
+        title: 'Proa cortando o mar liso de manhã + costão verde',
+        dir: 'Segure o celular na altura da proa por 8s estável olhando a água e os morros até a enseada.',
+        drive: 'entrada/02-Travessia-Lagoinha/proa-mar-liso.mp4'
+      },
+      {
+        id: 'm4',
+        side: 'praia',
+        sideLabel: '🏝️ Gravação na Praia (Lagoinha)',
+        tag: 'Captação Tarde · Stories',
+        title: 'Visão da areia: bote encostando e retorno fácil às 14h–16h',
+        dir: 'Mostre quem fez a trilha e cansou: bote encostando perto da lagoa com chamada direta para voltar de barco.',
+        drive: 'entrada/02-Travessia-Lagoinha/praia-chegada-bote.mp4'
+      }
+    ];
+
+    var COLETA_REELS = [
+      {
+        id: 'r1',
+        badge: 'Reel 1 · Storytelling Ambiental',
+        title: 'O que fica na Lagoinha quando todo mundo vai embora',
+        goal: 'Meta: Compartilhamentos + repost da Ecoar Turismo',
+        scenes: [
+          { t: '0,0–2,0s (Praia)', screen: 'ISSO NÃO É DAQUI.', desc: 'Close real encontrando garrafa/plástico na restinga da Lagoinha.' },
+          { t: '2,0–8,0s (Barco + Fala IA)', screen: '0 coleta pública', desc: 'Card areia #ece7dc: Parque Natural Municipal depende de quem traz o lixo de volta.' },
+          { t: '8,0–18,0s (Barco)', screen: 'Mutirão Pântano do Sul', desc: 'Cortes de 2s dos barqueiros colocando os sacos no bote e trazendo pelo mar.' },
+          { t: '18,0–25,0s (Fecho Loop)', screen: 'Traga seu lixo de volta', desc: 'Vista limpa da enseada da Lagoinha + selo @trilhasdomaroficial.' }
+        ]
+      },
+      {
+        id: 'r2',
+        badge: 'Reel 2 · Utilidade Pública (20s)',
+        title: 'Vai pra Lagoinha do Leste? Leva isso na mochila',
+        goal: 'Meta: Salvamentos + alcance orgânico',
+        scenes: [
+          { t: '0,0–2,0s (Barco)', screen: '3 regras da Lagoinha', desc: 'Corte rápido do bote chegando com texto grifado em #5fb733.' },
+          { t: '2,0–12,0s (Praia)', screen: '1. Sacola · 2. Água · 3. Mar', desc: 'Intercala 3 clipes da coleta de hoje mostrando por que a sacola salva a praia.' },
+          { t: '12,0–20,0s (CTA)', screen: 'Ir ou voltar de barco?', desc: 'Link na bio / WhatsApp para travessia sem trilha (~30 min · R$ 80 trecho).' }
+        ]
+      },
+      {
+        id: 'r3',
+        badge: 'Reel 3 · Prova de Confiança',
+        title: 'Quem cuida da rota Pântano → Lagoinha o ano inteiro',
+        goal: 'Meta: Conversão direta para famílias',
+        scenes: [
+          { t: '0,0–3,0s (Barco)', screen: 'Nossa casa no Sul da Ilha', desc: 'Equipe e botes no Pântano do Sul em ação real de preservação.' },
+          { t: '3,0–15,0s (Mix Praia+Mar)', screen: 'Pântano → Lagoinha 30m', desc: 'Mini mapa animado + cenas reais da limpeza mostrando cuidado da cooperativa.' },
+          { t: '15,0–24,0s (Oferta)', screen: 'Comenta LAGOINHA', desc: 'Convite transparente: R$ 80 por trajeto com colete e segurança avaliada na hora.' }
+        ]
+      }
+    ];
+
+    var MODEL_TEMPLATES = {
+      acao_ambiental: {
+        tele: '"Você sabia que a <mark>Lagoinha do Leste</mark> não tem coleta pública de lixo? Hoje recolhemos esses sacos na areia para trazer de volta no <mark>barco</mark> e preservar o parque."',
+        scenes: [
+          ['0–2s · Gancho (Praia)', 'Close rápido no resíduo/ação de limpeza com tarja #04161b + grifo #5fb733.'],
+          ['2–9s · Fato Real (Card Areia)', 'Explica que a Lagoinha é Parque Natural Municipal e precisa de cuidado conjunto.'],
+          ['9–19s · Trabalho Mútuo (Barco)', 'Barqueiros carregando os sacos recolhidos no bote rumo ao Pântano do Sul.'],
+          ['19–25s · Fecho (Praia Limpa)', 'Plano aberto preservado + @trilhasdomaroficial.']
+        ]
+      },
+      dupla_ponta: {
+        tele: '"Do <mark>Pântano do Sul</mark> direto pra areia da <mark>Lagoinha</mark> em ~30 minutos, sem encarar a trilha pesada no sol forte."',
+        scenes: [
+          ['0–2s · Embarque (Barco)', 'Passageiros colocando colete no costão do Pântano do Sul.'],
+          ['2–10s · Navegação (Barco)', 'Costão verde e Mata Atlântica passando rápido da proa (cortes de 2s).'],
+          ['10–18s · Encontro na Areia (Praia)', 'Câmera da areia da Lagoinha filmando o bote chegando de frente.'],
+          ['18–22s · CTA (WhatsApp)', 'R$ 80 trecho / R$ 160 ida e volta · Comenta LAGOINHA.']
+        ]
+      },
+      resgate_trilha: {
+        tele: '"Fez a trilha até a <mark>Lagoinha</mark> e as pernas pesaram pra voltar? Nosso <mark>barco</mark> encosta direto na areia pra te levar ao Pântano."',
+        scenes: [
+          ['0–2s · Empatia (Praia)', 'Visão da trilha / morro cansativo contrastando com a lagoa calma.'],
+          ['2–10s · Solução (Praia)', 'Apoio na praia mostrando o bote chegando perto da areia na parte da tarde.'],
+          ['10–18s · Conforto (Barco)', 'Passageiro sentado descansando no retorno pelo mar (R$ 80 só volta).'],
+          ['18–22s · Aviso do Mar', 'Sujeito às vagas e condição do mar · Chame no WhatsApp.']
+        ]
+      },
+      fauna_e_ilhas: {
+        tele: '"A cerca de 12 km do Pântano, <mark>Moleques do Sul</mark> abriga aves marinhas protegidas dentro do Parque da Serra do Tabuleiro."',
+        scenes: [
+          ['0–2s · Impacto (Barco)', 'Três ilhas rochosas em mar aberto + título estilo Ecoar.'],
+          ['2–11s · Educação (IA + Barco)', 'Curiosidade ambiental: passeio panorâmico sem desembarque respeitando a fauna.'],
+          ['11–18s · Água Clara (Barco)', 'Parada para banho e snorkel nas Três Irmãs / costão abrigado.'],
+          ['18–24s · Fecho Grupo', 'Grupo mín. 8 pessoas (R$ 100 Três Irmãs · R$ 200 Moleques).']
+        ]
+      },
+      duvida_turista: {
+        tele: '"Dá pra ir pela trilha e voltar de <mark>barco</mark>? Sim! O trajeto avulso custa <mark>R$ 80</mark> por pessoa conforme mar e vagas do dia."',
+        scenes: [
+          ['0–2s · Pergunta na Tela (Praia/Barco)', 'Caixa de pergunta direta em #ece7dc no frame 0.'],
+          ['2–12s · Resposta Sem Enrolação', 'Barqueiro ou apoio na areia respondendo em 1 frase curta por cena.'],
+          ['12–20s · Onde Embarcar', 'Mapa simples Pântano ↔ Lagoinha + link do WhatsApp.']
+        ]
+      }
+    };
+
+    var savedMember = localStorage.getItem('tdm_painel_member') || 'caio';
+    if (!MEMBERS[savedMember]) savedMember = 'caio';
+    var savedDone = {};
+    try { savedDone = JSON.parse(localStorage.getItem('tdm_painel_done') || '{}'); } catch (e) {}
+
+    var state = {
+      member: savedMember,
+      done: savedDone,
+      files: [
+        { name: 'VID_coleta_areia_01.mp4', folder: '01-Coleta-Lagoinha', origin: 'Praia (areia da Lagoinha)', size: '18,4 MB', status: 'No Google Drive' },
+        { name: 'VID_sacos_no_bote_02.mp4', folder: '01-Coleta-Lagoinha', origin: 'Barco (no mar)', size: '24,1 MB', status: 'No Google Drive' }
+      ]
+    };
+
+    function renderHeader() {
+      var m = MEMBERS[state.member];
+      document.getElementById('sessionBadge').textContent = 'Sessão salva · ' + m.name + ' (' + m.email + ')';
+      document.getElementById('roleHeading').textContent = m.filter === 'todos' ? 'Visão Completa (Barco + Praia)' : 'Foco: ' + m.role;
+      document.querySelectorAll('.btn-role').forEach(function (b) {
+        b.classList.toggle('is-active', b.getAttribute('data-member') === state.member);
+      });
+    }
+
+    function renderMissions() {
+      var m = MEMBERS[state.member];
+      var list = document.getElementById('missionList');
+      list.innerHTML = '';
+      var items = MISSIONS.filter(function (it) {
+        return m.filter === 'todos' || it.side === m.filter;
+      });
+      items.forEach(function (it) {
+        var done = Boolean(state.done[it.id]);
+        var div = document.createElement('div');
+        div.className = 'mission' + (done ? ' is-done' : '');
+        div.innerHTML =
+          '<div class="m-top">' +
+            '<div class="m-tags">' +
+              '<span class="badge ' + (it.side === 'mar' ? 'b-mar' : 'b-praia') + '">' + it.sideLabel + '</span>' +
+              '<span class="badge b-ia">' + it.tag + '</span>' +
+            '</div>' +
+            '<button type="button" class="' + (done ? 'btn-outline' : 'btn-primary') + '" data-toggle-mission="' + it.id + '">' +
+              (done ? '✓ Enviado ao Drive' : 'Marcar como gravado') +
+            '</button>' +
+          '</div>' +
+          '<div class="m-title">' + it.title + '</div>' +
+          '<p class="m-dir">' + it.dir + '</p>' +
+          '<div class="m-foot">' +
+            '<span class="m-path">Drive/TrilhasDoMar/' + it.drive + '</span>' +
+          '</div>';
+        list.appendChild(div);
+      });
+
+      list.querySelectorAll('[data-toggle-mission]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var id = this.getAttribute('data-toggle-mission');
+          state.done[id] = !state.done[id];
+          try { localStorage.setItem('tdm_painel_done', JSON.stringify(state.done)); } catch (e) {}
+          renderMissions();
+        });
+      });
+    }
+
+    function renderQueue() {
+      var box = document.getElementById('uploadQueue');
+      box.innerHTML = '';
+      state.files.forEach(function (f) {
+        var row = document.createElement('div');
+        row.className = 'queue-item';
+        row.innerHTML =
+          '<div><strong>' + f.name + '</strong> <span style="color:var(--muted)">(' + f.size + ' · ' + f.origin + ')</span></div>' +
+          '<span class="badge b-praia">✓ ' + f.status + ' · ' + f.folder + '</span>';
+        box.appendChild(row);
+      });
+    }
+
+    function renderColetaReels() {
+      var wrap = document.getElementById('coletaReels');
+      wrap.innerHTML = '';
+      COLETA_REELS.forEach(function (r) {
+        var card = document.createElement('article');
+        card.className = 'reel-card';
+        var scenesHtml = r.scenes.map(function (sc) {
+          return '<div class="scene">' +
+            '<div class="scene-head"><span>' + sc.t + '</span></div>' +
+            '<div>' + sc.desc + '</div>' +
+            '<span class="scene-screen">' + sc.screen + '</span>' +
+          '</div>';
+        }).join('');
+        card.innerHTML =
+          '<div>' +
+            '<span class="badge b-ia">' + r.badge + '</span>' +
+            '<h3 style="font-size:1.05rem;margin-top:8px">' + r.title + '</h3>' +
+            '<p style="font-size:12px;color:var(--lime-deep);font-weight:700;margin-top:3px">' + r.goal + '</p>' +
+            '<div class="scene-list">' + scenesHtml + '</div>' +
+          '</div>';
+        wrap.appendChild(card);
+      });
+    }
+
+    function renderGeneratedScript() {
+      var model = document.getElementById('modelSelect').value;
+      var topic = document.getElementById('topicInput').value.trim() || 'Passeio saindo do Pântano do Sul';
+      var tpl = MODEL_TEMPLATES[model] || MODEL_TEMPLATES.acao_ambiental;
+      document.getElementById('telePreview').innerHTML = tpl.tele;
+      var target = document.getElementById('generatedScript');
+      target.innerHTML = tpl.scenes.map(function (sc, idx) {
+        return '<div class="scene">' +
+          '<div class="scene-head"><span>Cena ' + (idx + 1) + ' · ' + sc[0] + '</span></div>' +
+          '<div>' + sc[1] + ' <span style="color:var(--muted)">(' + topic + ')</span></div>' +
+        '</div>';
+      }).join('');
+    }
+
+    document.querySelectorAll('.btn-role').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        state.member = this.getAttribute('data-member');
+        try { localStorage.setItem('tdm_painel_member', state.member); } catch (e) {}
+        renderHeader();
+        renderMissions();
+      });
+    });
+
+    document.querySelectorAll('.btn-tab').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var tab = this.getAttribute('data-tab');
+        document.querySelectorAll('.btn-tab').forEach(function (b) { b.classList.remove('is-active'); });
+        this.classList.add('is-active');
+        document.querySelectorAll('.panel').forEach(function (p) { p.classList.remove('is-active'); });
+        document.getElementById('tab-' + tab).classList.add('is-active');
+      });
+    });
+
+    document.getElementById('btnResetMissions').addEventListener('click', function () {
+      state.done = {};
+      try { localStorage.setItem('tdm_painel_done', '{}'); } catch (e) {}
+      renderMissions();
+    });
+
+    var upFolder = document.getElementById('upFolder');
+    upFolder.addEventListener('change', function () {
+      document.getElementById('driveTargetLabel').textContent = 'Destino: Drive/TrilhasDoMar/entrada/' + this.value + '/';
+    });
+
+    var fileInput = document.getElementById('fileInput');
+    document.getElementById('btnPickFiles').addEventListener('click', function () { fileInput.click(); });
+    fileInput.addEventListener('change', function () {
+      var folder = upFolder.value;
+      var origin = document.getElementById('upOrigin').value;
+      Array.prototype.forEach.call(this.files || [], function (f) {
+        var mb = (f.size / (1024 * 1024)).toFixed(1).replace('.', ',') + ' MB';
+        state.files.unshift({ name: f.name, folder: folder, origin: origin, size: mb, status: 'Pronto p/ envio direto Drive' });
+      });
+      renderQueue();
+      this.value = '';
+    });
+
+    document.getElementById('btnRunAnalysis').addEventListener('click', function () {
+      var count = state.files.length;
+      document.getElementById('analysisStatus').innerHTML =
+        '<strong>✓ Decupagem concluída em ' + count + ' arquivos do Drive:</strong> A IA separou os melhores takes de praia + barco e montou os 3 roteiros abaixo no System Design Trilhas × Ecoar.';
+      renderColetaReels();
+    });
+
+    document.getElementById('btnGenScript').addEventListener('click', renderGeneratedScript);
+    document.getElementById('modelSelect').addEventListener('change', renderGeneratedScript);
+
+    var modal = document.getElementById('authModal');
+    var errBox = document.getElementById('authErr');
+    document.getElementById('btnOpenAuth').addEventListener('click', function () {
+      errBox.classList.remove('show');
+      modal.classList.add('open');
+    });
+    document.getElementById('btnCloseAuth').addEventListener('click', function () { modal.classList.remove('open'); });
+    document.getElementById('btnTestAuth').addEventListener('click', function () {
+      var val = document.getElementById('authEmail').value.trim().toLowerCase();
+      var found = Object.keys(MEMBERS).find(function (k) { return MEMBERS[k].email === val; });
+      if (!found) {
+        errBox.classList.add('show');
+        return;
+      }
+      errBox.classList.remove('show');
+      state.member = found;
+      try { localStorage.setItem('tdm_painel_member', found); } catch (e) {}
+      renderHeader();
+      renderMissions();
+      modal.classList.remove('open');
+    });
+
+    renderHeader();
+    renderMissions();
+    renderQueue();
+    renderColetaReels();
+    renderGeneratedScript();
+  })();
+</script>
+</body>
+</html>
