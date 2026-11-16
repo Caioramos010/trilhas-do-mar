@@ -3,3 +3,7 @@ node_modules/
 *.log
 .vscode/
 dist/
+.dev.vars
+.env
+.env.*
+.wrangler/
