@@ -29,18 +29,10 @@ window.TDM = {
 
   /* ─── 3. REDES E PLATAFORMAS ─────────────────────────────────────────── */
   redes: {
-    instagram:    "https://www.instagram.com/trilhasdomaroficial/",
-    airbnb:       "https://www.airbnb.com.br/",  // ⚠️ TROCAR pela página do serviço
-    getyourguide: "https://www.getyourguide.com/" // ⚠️ TROCAR pela página da atividade
+    instagram: "https://www.instagram.com/trilhasdomaroficial/"
   },
 
-  /* ─── 4. NOTA E AVALIAÇÕES ───────────────────────────────────────────── */
-  avaliacoes: {
-    nota: "4,9",                      // ⚠️ nota média real (Airbnb/GetYourGuide)
-    quantidade: ""                   // ⚠️ quantas avaliações somadas
-  },
-
-  /* ─── 5. DEPOIMENTOS ─────────────────────────────────────────────────────
+  /* ─── 4. DEPOIMENTOS ─────────────────────────────────────────────────────
      A lista está VAZIA de propósito: enquanto não houver avaliação real, a
      seção de prova social fica oculta no site (nada de review inventada ao ar
      = propaganda enganosa). Para ligar a seção, preencha com as avaliações

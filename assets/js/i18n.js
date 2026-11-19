@@ -114,12 +114,11 @@ window.TDM_I18N = {
     "faq.q4": "E se o mar estiver ruim no dia?",
     "faq.a4": "O barqueiro cancela a saída por segurança. Você remarca sem custo ou recebe o valor de volta.",
     "faq.q5": "O que levar e como pagar?",
-    "faq.a5": "Leve água, protetor, chapéu, lanche e sacola para trazer seu lixo (não há estrutura na Lagoinha). Pagamento: combinado no agendamento.",
+    "faq.a5": "Leve água, protetor, chapéu, lanche e sacola para trazer seu lixo (não há estrutura na Lagoinha). Aceitamos Pix, cartão e dinheiro.",
 
     "cta.h2": "Escolha o destino. <em>A gente leva.</em>",
     "cta.lead": "Manda uma mensagem com o passeio, o dia e quantas pessoas. Quem responde é barqueiro, não robô.",
     "cta.btn": "Agendar no WhatsApp",
-    "cta.alt": 'Prefere reservar por plataforma? Estamos no <a data-social="airbnb" href="#" target="_blank" rel="noopener">Airbnb Experiências</a> e no <a data-social="getyourguide" href="#" target="_blank" rel="noopener">GetYourGuide</a>.',
 
     "foot.marca": "Cooperativa de barqueiros",
     "foot.desc": "Travessias e navegação no sul da Ilha de Florianópolis. Turismo de baixo impacto, feito por quem é daqui.",
@@ -263,12 +262,11 @@ window.TDM_I18N = {
     "faq.q4": "What if the sea is rough that day?",
     "faq.a4": "The skipper cancels the departure for safety. You rebook at no cost or get a full refund.",
     "faq.q5": "What should I bring and how do I pay?",
-    "faq.a5": "Bring water, sunscreen, a hat, snacks and a bag to pack out your trash (there are no facilities at Lagoinha). Payment: arranged upon booking.",
+    "faq.a5": "Bring water, sunscreen, a hat, snacks and a bag to pack out your trash (there are no facilities at Lagoinha). We accept Pix, card and cash.",
 
     "cta.h2": "Pick your destination. <em>We will take you.</em>",
     "cta.lead": "Send a message with the trip, the day and how many people. A boatman answers, not a robot.",
     "cta.btn": "Book on WhatsApp",
-    "cta.alt": 'Rather book through a platform? We are on <a data-social="airbnb" href="#" target="_blank" rel="noopener">Airbnb Experiences</a> and <a data-social="getyourguide" href="#" target="_blank" rel="noopener">GetYourGuide</a>.',
 
     "foot.marca": "Boatmen's cooperative",
     "foot.desc": "Crossings and boat trips in the south of Florianópolis Island. Low-impact tourism, run by people from here.",
@@ -412,12 +410,11 @@ window.TDM_I18N = {
     "faq.q4": "¿Y si el mar está malo ese día?",
     "faq.a4": "El barquero cancela la salida por seguridad. Cambias la fecha sin coste o recibes el importe de vuelta.",
     "faq.q5": "¿Qué llevar y cómo pagar?",
-    "faq.a5": "Lleva agua, protector solar, gorra, algo para comer y bolsa para traer tu basura (no hay servicios en Lagoinha). Pago: acordado al reservar.",
+    "faq.a5": "Lleva agua, protector solar, gorra, algo para comer y bolsa para traer tu basura (no hay servicios en Lagoinha). Aceptamos Pix, tarjeta y efectivo.",
 
     "cta.h2": "Elige el destino. <em>Nosotros te llevamos.</em>",
     "cta.lead": "Manda un mensaje con el paseo, el día y cuántas personas. Quien responde es un barquero, no un robot.",
     "cta.btn": "Reservar por WhatsApp",
-    "cta.alt": '¿Prefieres reservar por plataforma? Estamos en <a data-social="airbnb" href="#" target="_blank" rel="noopener">Airbnb Experiencias</a> y en <a data-social="getyourguide" href="#" target="_blank" rel="noopener">GetYourGuide</a>.',
 
     "foot.marca": "Cooperativa de barqueros",
     "foot.desc": "Travesías y navegación por el sur de la Isla de Florianópolis. Turismo de bajo impacto, hecho por gente de aquí.",
